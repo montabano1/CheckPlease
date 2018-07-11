@@ -1,18 +1,15 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import SessionForm from './session_form';
 import { signup } from '../../actions/session_actions';
 
+const mapStateToProps = (state, ownProps) => {
+  return { formType: 'signup'};
+};
 
-function mapStateToProps(state, ownProps) {
+const mapDispatchToProps = dispatch => {
   return {
-    buttonText: "SIGN UP"
+		processForm: (user) => dispatch(signup(user))
   };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    formAction: user => dispatch(signup(user))
-  };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
