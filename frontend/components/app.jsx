@@ -8,9 +8,9 @@ import Modal from './modal/modal';
 
 const App = () => (
   <div>
-    <Modal />
+    <Modal className='modal'/>
     <header>
-      <h1>Welcome to CheckPlease</h1>
+      <h1>logo</h1>
       <GreetingContainer />
     </header>
   </div>

@@ -14,6 +14,53 @@
  *= require_self
  */
 
+ html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
  .modal-background {
    position: fixed;
    top: 0;
@@ -25,19 +72,145 @@
  }
 
  .modal-child {
-   position: absolute;
+   position: relative;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   width: 428px;
+   height: 469px;
+   padding: 30px 16px;
+   background-color: white;
+   display: inline-block;
+   align-items: center;
+ }
+
+ .modal-child-container{
+  display: flex;
+  align-items: center;
+  justify-content: center
  }
 
 #modal-signup {
-  width: 100px;
-  height: 50px;
+  width: 76.172px;
+  height: 43px;
   color: #ffffff;
   background-color: #1c627a;
-  font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
   border-radius: 3px;
   text-align: center;
+  padding: 0 1rem;
+  line-height: 2rem;
+  font-size: .875rem;
+  margin: .6875rem 0 0;
+}
+
+#modal-login {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.h1 {
+  width: 500px;
+}
+
+.login-form {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+#please-sign-in {
+  border-bottom: 1px solid lightgray;
+  width: 395px;
+  text-align: left;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0;
+  border: 1px;
+  margin: 8px 0px;
+  border-bottom: 1px solid lightgray;
+  border-radius: 3px;
+}
+#please-sign-up {
+  border-bottom: 1px solid lightgray;
+  width: 395px;
+  text-align: left;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0;
+  border: 1px;
+  margin: 8px 0px;
+  border-bottom: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+#please-sign-in h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+  position: relative;
+  margin-bottom: 3px;
+}
+
+#please-sign-up h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+  position: relative;
+  margin-bottom: 3px;
+}
+
+.email-input {
+  width: 362px;
+  height: 20px;
+  padding: 16px;
+  border: 1px;
+  margin: 8px 0px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+    display: inline-block;
+}
+.password-input {
+  width: 362px;
+  height: 20px;
+  padding: 16px;
+  border: 1px;
+  margin-bottom: 8px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+    display: inline-block;
+}
+
+.forgot-password {
+  width: 380px;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2px 0 5px 0;
+  color: blue;
+}
+
+.submit-button {
+  width: 362px;
+  height: 20px;
+  padding: 16px;
+  border: 1px;
+  margin-bottom: 8px;
+  border: 1px solid lightgray;
+  display: inline-block;
+  text-align: center;
+  background-color: #da3743;
+  border-radius: 3px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
 }

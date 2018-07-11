@@ -12,10 +12,10 @@ function Modal({modal, closeModal}) {
   switch (modal) {
 
     case 'login':
-      component = <LoginContainer />;
+      component = <LoginContainer className='modal-child-container'/>;
       break;
     case 'signup':
-      component = <SignupContainer />;
+      component = <SignupContainer className='modal-child-container'/>;
       break;
     default:
       return null;

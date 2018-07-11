@@ -27,52 +27,49 @@ class SessionForm extends React.Component {
   }
 
 	render() {
-		if(this.props.formType === 'signup') {
+		if(this.props.formType === 'Sign up') {
       return (
-        <div>
-					<h1>SIGN UP</h1>
-          <Link to='/login'>Log In</Link>
-					<form onSubmit={this.handleSubmit}>
-          <label>Username
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-          </label>
-
-          <label> Password
-            <input
-							type="password"
-              value={this.state.password}
-              onChange={this.update('password')} />
-          </label>
-
-          <input type="submit" value={this.props.formType} />
-        </form>
+        <div className='login-form'>
+					<div id='please-sign-up'>
+            <h3 >Sign up!</h3>
+          </div>
+					<form onSubmit={this.handleSubmit} className='login-form'>
+              <input
+                className='email-input'
+                type="text"
+                placeholder='email'
+                onChange={this.update('username')} />
+              <input
+                className='password-input'
+  							type="password"
+                placeholder='password'
+                onChange={this.update('password')} />
+            <input className='submit-button' type="submit" value={this.props.formType} />
+          </form>
         </div>
       );
     } else {
       return (
-				<div>
-					<h1>Log In</h1>
-          <Link to='/signup'>Sign Up</Link>
-					<form onSubmit={this.handleSubmit}>
-          <label>Username
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-          </label>
-
-          <label> Password
-            <input
-							type="password"
-              value={this.state.password}
-              onChange={this.update('password')} />
-          </label>
-
-          <input type="submit" value={this.props.formType} />
-        </form>
+				<div className='login-form'>
+					<div id='please-sign-in'>
+            <h3 >Please sign in</h3>
+          </div>
+					<form onSubmit={this.handleSubmit} className='login-form'>
+              <input
+                className='email-input'
+                type="text"
+                placeholder='email'
+                onChange={this.update('username')} />
+              <input
+                className='password-input'
+  							type="password"
+                placeholder='password'
+                onChange={this.update('password')} />
+              <div className='forgot-password'>
+                <a href="#">Forgot Password?</a>
+              </div>
+            <input className='submit-button' type="submit" value={this.props.formType} />
+          </form>
         </div>
       );
     }
