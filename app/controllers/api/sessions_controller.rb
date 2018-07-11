@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   def new
     render :new
   end
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     )
     if @user
       log_in!(@user)
-      render 
+      render :template => '/api/users/show'
     else
       flash.now[:errors] = ['Invalid username/password']
       render :new
