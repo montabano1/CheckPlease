@@ -9,7 +9,6 @@ function Modal({modal, closeModal}) {
     return null;
   }
   let component;
-  debugger
   switch (modal) {
 
     case 'login':

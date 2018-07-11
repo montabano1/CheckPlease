@@ -1,17 +1,18 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
 import Greeting from './greeting';
-import { logoutCurrentUser } from '../../actions/session_actions';
 
+const mapStateToProps = state => ({
+  currentUser: state.entities.users[state.session.id]
+});
 
-const mapStateToProps = (state) => {
-  let usercheck = state.entities.users[state.session.id] || [];
-  return {username: usercheck.username};
-};
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout()),
+  openModal: modal => dispatch(openModal(modal))
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logout: () => dispatch(logoutCurrentUser()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Greeting);
