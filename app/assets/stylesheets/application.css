@@ -31,9 +31,11 @@
    transform: translate(-50%, -50%);
  }
 
-#modal-login {
+#modal-signup {
   width: 100px;
   height: 50px;
   color: #ffffff;
-  background-color: 
+  background-color: #1c627a;
+  font-family: BrandonText,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
 }
