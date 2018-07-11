@@ -11,19 +11,34 @@ class SessionForm extends React.Component {
       password: ""
     };
 		this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
 	update(field) {
-	    return (e) => {
-	      this.setState({[field]: e.target.value});
-	    };
-	  }
+	  return (e) => {
+	    this.setState({[field]: e.target.value});
+	  };
+	}
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
 	handleSubmit(e) {
     e.preventDefault();
-    this.props.closeModal();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push('/'));
+    this.props.processForm(user).then(() => {
+      this.props.history.push('/');
+      this.props.closeModal();
+    });
   }
 
 	render() {
@@ -33,6 +48,7 @@ class SessionForm extends React.Component {
 					<div id='please-sign-up'>
             <h3 >Sign up!</h3>
           </div>
+          <div className='errors-div'>{this.renderErrors()}</div>
 					<form onSubmit={this.handleSubmit} className='login-form'>
               <input
                 className='email-input'
@@ -51,6 +67,7 @@ class SessionForm extends React.Component {
     } else {
       return (
 				<div className='login-form'>
+          <div className='errors-div'>{this.renderErrors()}</div>
 					<div id='please-sign-in'>
             <h3 >Please sign in</h3>
           </div>

@@ -12,8 +12,7 @@ class Api::SessionsController < ApplicationController
       log_in!(@user)
       render :template => '/api/users/show'
     else
-      flash.now[:errors] = ['Invalid username/password']
-      render :new
+      render json: ["INVALID USERNAME/PASSWORD COMBINATION"], status: 401
     end
   end
 

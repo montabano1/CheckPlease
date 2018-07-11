@@ -1,12 +1,13 @@
 class Api::UsersController < ApplicationController
 
   def create
+
     @user = User.new(user_params)
-    if @user.save!
+    if @user.save
       log_in!(@user)
       render :show
     else
-      render json: ['something went wrong'], status: 422
+      render json: ["PASSWORD MUST BE 6 CHARACTERS LONG"], status: 401
     end
   end
 

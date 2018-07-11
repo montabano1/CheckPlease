@@ -3,8 +3,11 @@ import SessionForm from './session_form';
 import { signup } from '../../actions/session_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = (state, ownProps) => {
-  return { formType: 'Sign up'};
+const mapStateToProps = ({ errors }) => {
+  return {
+    errors: errors.session,
+    formType: 'Sign up'
+  };
 };
 
 const mapDispatchToProps = dispatch => {

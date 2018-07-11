@@ -108,11 +108,26 @@ input[type="submit"] {
 #modal-login {
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
+  padding-right: 10px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+}
+
+.header-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.header-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  padding-right: 10px;
 }
 
 .h1 {
@@ -126,6 +141,10 @@ header {
   justify-content: center;
   align-items: center;
   text-align: left;
+}
+
+.errors-div {
+  color: red;
 }
 
 #please-sign-in {
