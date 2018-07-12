@@ -20,10 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	} else {
 	  store = configureStore();
 	}
-	window.dispatch = store.dispatch
+	window.dispatch = store.dispatch;
   window.getState = store.getState;
-	window.createRestaurant = restactions.createRestaurant
-	window.signup = actions.signup
+	window.createRestaurant = restactions.createRestaurant;
+	window.signup = actions.signup;
+  window.fetchRestaurants = restactions.fetchRestaurants;
+  window.fetchRestaurant = restactions.fetchRestaurant;
 
   const root = document.getElementById('root');
 
