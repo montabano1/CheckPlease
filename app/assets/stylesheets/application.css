@@ -144,7 +144,11 @@ header {
 }
 
 .errors-div {
-  color: red;
+  width: 395px;
+  text-align: left;
+  display: flex;
+  color: #d30303;
+  font-weight: lighter;
 }
 
 #please-sign-in {

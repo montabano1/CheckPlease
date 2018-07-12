@@ -34,11 +34,23 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
     e.preventDefault();
+    const fieldErrors = []
+    if(this.state.username.length === 0) {
+      fieldErrors.push('Please enter your Email')
+    }
+    if(this.state.password.length === 0) {
+      fieldErrors.push('Please enter your Password')
+    } else if(this.state.password.length < 6) {
+      fieldErrors.push('Password must be at least 6 characters')
+    }
+    if(fieldErrors.length > 0) {
+      this.props.sendErrors(fieldErrors)
+    } else {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
       this.props.history.push('/');
       this.props.closeModal();
-    });
+    })};
   }
 
 	render() {
@@ -67,10 +79,10 @@ class SessionForm extends React.Component {
     } else {
       return (
 				<div className='login-form'>
-          <div className='errors-div'>{this.renderErrors()}</div>
 					<div id='please-sign-in'>
             <h3 >Please sign in</h3>
           </div>
+          <div className='errors-div'>{this.renderErrors()}</div>
 					<form onSubmit={this.handleSubmit} className='login-form'>
               <input
                 className='email-input'
