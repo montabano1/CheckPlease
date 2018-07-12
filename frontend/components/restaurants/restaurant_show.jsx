@@ -52,7 +52,7 @@ class RestaurantShow extends React.Component {
               <img src={window.image10} />
             </picture>
             <picture className='full-image'>
-              <img src={window.image11} />
+              <img src={window.image1} />
             </picture>
             <picture className='half-image'>
               <img src={window.image12} />
