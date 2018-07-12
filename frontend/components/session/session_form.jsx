@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
+      email: "",
       password: ""
     };
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,23 +35,23 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
     e.preventDefault();
-    const fieldErrors = []
-    if(this.state.username.length === 0) {
-      fieldErrors.push('Please enter your Email')
+    const fieldErrors = [];
+    if(this.state.email.length === 0) {
+      fieldErrors.push('Please enter your Email');
     }
     if(this.state.password.length === 0) {
-      fieldErrors.push('Please enter your Password')
+      fieldErrors.push('Please enter your Password');
     } else if(this.state.password.length < 6) {
-      fieldErrors.push('Password must be at least 6 characters')
+      fieldErrors.push('Password must be at least 6 characters');
     }
     if(fieldErrors.length > 0) {
-      this.props.sendErrors(fieldErrors)
+      this.props.sendErrors(fieldErrors);
     } else {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
       this.props.history.push('/');
       this.props.closeModal();
-    })};
+    });}
   }
 
 	render() {
@@ -65,8 +66,13 @@ class SessionForm extends React.Component {
               <input
                 className='email-input'
                 type="text"
-                placeholder='email'
+                placeholder='Full Name'
                 onChange={this.update('username')} />
+              <input
+                className='email-input'
+                type="text"
+                placeholder='email'
+                onChange={this.update('email')} />
               <input
                 className='password-input'
   							type="password"
@@ -88,7 +94,7 @@ class SessionForm extends React.Component {
                 className='email-input'
                 type="text"
                 placeholder='email'
-                onChange={this.update('username')} />
+                onChange={this.update('email')} />
               <input
                 className='password-input'
   							type="password"
