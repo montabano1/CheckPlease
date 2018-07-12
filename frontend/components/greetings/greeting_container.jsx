@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   openModal: modal => dispatch(openModal(modal)),
-  loginDummy: () => dispatch(login({username:'monte', password:'password'}))
+  loginDummy: () => dispatch(login({username:'monte', email:'monte@monte.com', password:'password'}))
 });
 
 export default connect(

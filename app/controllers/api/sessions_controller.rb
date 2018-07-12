@@ -12,6 +12,7 @@ class Api::SessionsController < ApplicationController
       log_in!(@user)
       render :template => '/api/users/show'
     else
+      debugger
       render json: ["INVALID USERNAME/PASSWORD COMBINATION"], status: 401
     end
   end
