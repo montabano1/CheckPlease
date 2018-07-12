@@ -9,9 +9,15 @@ import Modal from './modal/modal';
 
 const App = () => (
   <div>
+    <span className='superheader'>
+      <span className='super-word'>EN</span>
+      <span className='super-word'>Help</span>
+      <span className='super-word'>Mobile</span>
+      <span className='super-word'>For Restaurateurs</span>
+    </span>
     <Modal className='modal'/>
     <header>
-      <h1>logo</h1>
+      <h1 className='logo'>CheckPlease!</h1>
       <GreetingContainer />
     </header>
     <Switch>

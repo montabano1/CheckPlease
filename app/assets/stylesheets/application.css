@@ -38,8 +38,8 @@ ul {
 
 img {
   display: block;
-  width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: fill;
 }
 
 input[type="password"],
@@ -61,60 +61,31 @@ input[type="submit"] {
   cursor: pointer;
 }
 
- .modal-background {
-   position: fixed;
-   top: 0;
-   bottom: 0;
-   right: 0;
-   left: 0;
-   background: rgba(0, 0, 0, 0.7);
-   z-index: 10;
- }
-
- .modal-child {
-   position: relative;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 428px;
-   height: 469px;
-   padding: 30px 16px;
-   background-color: white;
-   display: inline-block;
-   align-items: center;
- }
-
- .modal-child-container{
+.superheader {
+  width: 100%;
+  background-color: #f7f7f7;
   display: flex;
-  align-items: center;
-  justify-content: center
- }
-
-#modal-signup {
-  width: 76.172px;
-  height: 32px;
-  color: #ffffff;
-  background-color: #1c627a;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: lighter;
-  border-radius: 3px;
-  text-align: center;
-  line-height: 2rem;
-  font-size: .875rem;
-  margin: .6875rem 0 0;
-  font-weight: 400;
+  flex-direction: row-reverse;
+  padding-right: 30px;
 }
 
-#modal-login {
+.super-word {
+  margin: 5px 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
-  padding-right: 10px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
+}
+
+.logo {
+  font-family: 'Gaegu';
+  font-style: italic;
+  font-size: 30px;
 }
 
 .header-group {
@@ -132,109 +103,4 @@ header {
 
 .h1 {
   width: 500px;
-}
-
-.login-form {
-  display: flex;
-  font-family: 'Montserrat', sans-serif;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-
-}
-
-.errors-div {
-  width: 395px;
-  text-align: left;
-  display: flex;
-  color: #d30303;
-  font-weight: lighter;
-}
-
-#please-sign-in {
-  border-bottom: 1px solid lightgray;
-  width: 395px;
-  text-align: left;
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 0;
-  border: 1px;
-  margin: 8px 0px;
-  border-bottom: 1px solid lightgray;
-  border-radius: 3px;
-}
-#please-sign-up {
-  border-bottom: 1px solid lightgray;
-  width: 395px;
-  text-align: left;
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 0;
-  border: 1px;
-  margin: 8px 0px;
-  border-bottom: 1px solid lightgray;
-  border-radius: 3px;
-}
-
-#please-sign-in h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: lighter;
-  font-size: 30px;
-  position: relative;
-  margin-bottom: 3px;
-}
-
-#please-sign-up h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: lighter;
-  font-size: 30px;
-  position: relative;
-  margin-bottom: 3px;
-}
-
-.email-input {
-  width: 362px;
-  height: 20px;
-  padding: 16px;
-  border: 1px;
-  margin: 8px 0px;
-  border: 1px solid lightgray;
-  border-radius: 3px;
-    display: inline-block;
-}
-.password-input {
-  width: 362px;
-  height: 20px;
-  padding: 16px;
-  border: 1px;
-  margin-bottom: 8px;
-  border: 1px solid lightgray;
-  border-radius: 3px;
-    display: inline-block;
-}
-
-.forgot-password {
-  width: 380px;
-  text-align: right;
-  display: flex;
-  justify-content: flex-end;
-  margin: 2px 0 5px 0;
-  color: blue;
-}
-
-.submit-button {
-  width: 362px;
-  height: 20px;
-  padding: 16px;
-  border: 1px;
-  margin-bottom: 8px;
-  border: 1px solid lightgray;
-  display: inline-block;
-  text-align: center;
-  background-color: #da3743;
-  border-radius: 3px;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
 }
