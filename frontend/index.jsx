@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as APIUtil from './util/session_api_util';
 import * as actions from './actions/session_actions';
+import * as restactions from './actions/restaurant_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -19,8 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	} else {
 	  store = configureStore();
 	}
+	window.dispatch = store.dispatch
   window.getState = store.getState;
-
+	window.createRestaurant = restactions.createRestaurant
+	window.signup = actions.signup
 
   const root = document.getElementById('root');
 

@@ -92,17 +92,17 @@ input[type="submit"] {
 
 #modal-signup {
   width: 76.172px;
-  height: 43px;
+  height: 32px;
   color: #ffffff;
   background-color: #1c627a;
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
   border-radius: 3px;
   text-align: center;
-  padding: 0 1rem;
   line-height: 2rem;
   font-size: .875rem;
   margin: .6875rem 0 0;
+  font-weight: 400;
 }
 
 #modal-login {
@@ -141,6 +141,7 @@ header {
   justify-content: center;
   align-items: center;
   text-align: left;
+
 }
 
 .errors-div {

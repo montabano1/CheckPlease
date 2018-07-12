@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Greeting = ({ currentUser, logout, openModal }) => {
+const Greeting = ({ currentUser, logout, openModal, loginDummy }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
+      <button onClick={() => loginDummy()} id='modal-signup'>Demo</button>
+      &nbsp;&nbsp;
       <button onClick={() => openModal('signup')} id='modal-signup'>Sign up</button>
       &nbsp;&nbsp;
       <button onClick={() => openModal('login')} id='modal-login'>Sign in</button>
