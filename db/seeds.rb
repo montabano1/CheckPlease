@@ -19,3 +19,12 @@ mcdowells = Restaurant.create({
   price: 1,
   menu_url: 'menus.com/3'
 })
+
+mcdowells = Restaurant.create({
+  name: 'Burger Quen',
+  description: 'let them eat burgers',
+  location: '8504 queens blvd, Elmhurst, NY 11373',
+  cuisine: 'Fast food',
+  price: 1,
+  menu_url: 'menus.com/3'
+})

@@ -3,6 +3,7 @@ import GreetingContainer from './greetings/greeting_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
+import RestaurantHomeIndexContainer from './restaurants/restaurant_home_index_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';
@@ -21,6 +22,7 @@ const App = () => (
       <GreetingContainer />
     </header>
     <Switch>
+      <Route exact path="/" component={RestaurantHomeIndexContainer} />
       <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
     </Switch>
   </div>
