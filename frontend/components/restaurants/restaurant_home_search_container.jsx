@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchRestaurants } from '../../actions/restaurant_actions';
 import { RestaurantHomeIndexItem } from './restaurant_home_index_item';
 
-class RestaurantHomeSearchContainer extends React.Component {
-  componentDidMount() {
-    this.props.fetchRestaurants()
-  }
+export class RestaurantHomeSearchContainer extends React.Component {
 
   render() {
     return (
@@ -23,16 +20,3 @@ class RestaurantHomeSearchContainer extends React.Component {
   }
 
 }
-
-const mapStateToProps = state => {
-  const restaurants = Object.values(state.entities.restaurants);
-  return { restaurants };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchRestaurants: () => dispatch(fetchRestaurants())
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantHomeSearchContainer);

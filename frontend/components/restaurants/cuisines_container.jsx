@@ -47,17 +47,10 @@ class CuisineContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const restaurants = Object.values(state.entities.restaurants);
   return {
-    restaurants,
     currentuser: state.entities.users[state.session.id] || {username: ''}
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchRestaurants: () => dispatch(fetchRestaurants())
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CuisineContainer);
+export default connect(mapStateToProps, null)(CuisineContainer);
