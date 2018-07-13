@@ -37,7 +37,7 @@ peter_boogers = Restaurant.create({
   menu_url: 'menus.com/3'
 })
 orangebees = Restaurant.create({
-  name: 'Orangbees',
+  name: 'Orangebees',
   description: 'Orange ya glad we arent applebees',
   location: '8504 queens blvd, Elmhurst, NY 11373',
   cuisine: 'American',

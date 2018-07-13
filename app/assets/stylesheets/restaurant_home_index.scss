@@ -59,16 +59,15 @@
 }
 
 .home-index-container-heading {
-  margin: 10px;
+  margin: 10px 0 0 20px;
   font-size: 30px;
-
 }
 
 .home-index-list {
   display: flex;
   flex-direction: row;
   overflow: auto;
-  margin: 10px;
+  margin: 10px 10px 50px 10px;
 }
 
 .home-index-item {
@@ -99,4 +98,41 @@
   width: 238px;
   height: 20px;
   margin: 4px 0 0 3px;
+}
+
+.cuisine-container-heading {
+  margin: 10px 0 0 20px;
+  font-size: 30px;
+}
+.cuisine-list{
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  margin: 10px;
+}
+.cuisine-item {
+  width: 200px;
+  height: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  box-shadow: 0 2px 8px rgba(153,153,153,.4);
+  border: 1px solid #d8d9db;
+  border-radius: 4px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+}
+.cuisine-picture {
+  height: 100%;
+  filter: brightness(.5);
+}
+
+.cuisine-words {
+  position: absolute;
+  bottom: 100px;
+  color: white;
+  font-family: 'ABeeZee', sans-serif;
+  margin:5px;
 }
