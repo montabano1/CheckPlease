@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchRestaurant } from './restaurant_show_container';
+import RestaurantMap from './restaurant_map';
 
 class RestaurantShow extends React.Component {
 
@@ -111,7 +112,7 @@ class RestaurantShow extends React.Component {
                     <span className='specifics-description'>Casual Dress</span>
                   </section>
                   <section className='map'>
-                    map
+                    <RestaurantMap lat={restaurant.lat} lng={restaurant.lng}/>
                   </section>
 
                   <section className='specifics-address'>35 East 1838th Street New York, NY 10003</section>

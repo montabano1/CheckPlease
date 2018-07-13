@@ -108,3 +108,8 @@ header {
 .h1 {
   width: 500px;
 }
+
+#map-container {
+  height: 120px;
+  width: 288px;
+}

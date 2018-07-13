@@ -30,7 +30,7 @@ burger_quen = Restaurant.create({
   price: 1,
   menu_url: 'menus.com/2',
   lat: 40.736891,
-  lng: 73.879527
+  lng: -73.879527
 })
 peter_boogers = Restaurant.create({
   name: 'Peter Boogers',
@@ -50,7 +50,7 @@ orangebees = Restaurant.create({
   price: 1,
   menu_url: 'menus.com/4',
   lat: 40.757583,
-  lng: 73.991110
+  lng: -73.991110
 })
 sushi_mikes = Restaurant.create({
   name: 'Sushi Mikes',
@@ -60,5 +60,5 @@ sushi_mikes = Restaurant.create({
   price: 2,
   menu_url: 'menus.com/5',
   lat: 40.595165,
-  lng: 73.958413
+  lng: -73.958413
 })
