@@ -7,7 +7,7 @@ export function RestaurantHomeIndexItem ({restaurant}) {
       <section className='home-index-picture'>
         <img src={window.image1} />
       </section>
-      <section className='home-index-row'>
+      <section className='home-index-name'>
         {restaurant.name}
       </section>
       <section className='home-index-row'>
@@ -17,7 +17,7 @@ export function RestaurantHomeIndexItem ({restaurant}) {
         {restaurant.cuisine} - {restaurant.price} - Upper East Side
       </section>
       <section className='home-index-row'>
-        BOOKED AMOUNT GOES HERE
+        BOOKED AMT GOES HERE
       </section>
     </section>
 

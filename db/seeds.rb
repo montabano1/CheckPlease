@@ -17,14 +17,38 @@ mcdowells = Restaurant.create({
   location: '8507 queens blvd, Elmhurst, NY 11373',
   cuisine: 'Fast food',
   price: 1,
-  menu_url: 'menus.com/3'
+  menu_url: 'menus.com/1'
 })
 
-mcdowells = Restaurant.create({
+burger_quen = Restaurant.create({
   name: 'Burger Quen',
   description: 'let them eat burgers',
   location: '8504 queens blvd, Elmhurst, NY 11373',
   cuisine: 'Fast food',
   price: 1,
+  menu_url: 'menus.com/2'
+})
+peter_boogers = Restaurant.create({
+  name: 'Peter Boogers',
+  description: 'try our steak snoz',
+  location: '21 broad st, Brooklyn, NY 10708',
+  cuisine: 'Steakhouse',
+  price: 3,
   menu_url: 'menus.com/3'
+})
+orangebees = Restaurant.create({
+  name: 'Orangbees',
+  description: 'Orange ya glad we arent applebees',
+  location: '8504 queens blvd, Elmhurst, NY 11373',
+  cuisine: 'American',
+  price: 1,
+  menu_url: 'menus.com/4'
+})
+sushi_mikes = Restaurant.create({
+  name: 'Sushi Mikes',
+  description: 'sushini',
+  location: '8504 queens blvd, Elmhurst, NY 11373',
+  cuisine: 'Sushi',
+  price: 2,
+  menu_url: 'menus.com/5'
 })

@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 import { RestaurantHomeIndexItem } from './restaurant_home_index_item'
 import { fetchRestaurants } from '../../actions/restaurant_actions'
 
 
-class restaurantHomeIndex extends React.Component {
+class RestaurantHomeIndexContainer extends React.Component {
 
   componentDidMount() {
     this.props.fetchRestaurants()
@@ -13,15 +14,19 @@ class restaurantHomeIndex extends React.Component {
   render() {
     const restaurants = this.props.restaurants.map(rest => {
       return (
-        <RestaurantHomeIndexItem restaurant={rest} key={rest.id} />
+        <Link to={`/restaurants/${rest.id}`} key={rest.id}>
+          <RestaurantHomeIndexItem restaurant={rest} key={rest.id} />
+        </Link>
       );
     });
 
 
     return (
-      <main>
-        <h3>Restaurants</h3>
-        <ul>{restaurants}</ul>
+      <main >
+        <section className='home-index-container-heading'>
+          Recommended for you {this.props.currentuser.username}:
+        </section>
+        <ul className='home-index-list'>{restaurants}</ul>
       </main>
     );
   }
@@ -29,7 +34,10 @@ class restaurantHomeIndex extends React.Component {
 
 const mapStateToProps = state => {
   const restaurants = Object.values(state.entities.restaurants);
-  return { restaurants };
+  return {
+    restaurants,
+    currentuser: state.entities.users[state.session.id] || {username: ''}
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -38,4 +46,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(restaurantHomeIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantHomeIndexContainer);
