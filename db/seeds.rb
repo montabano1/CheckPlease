@@ -17,7 +17,9 @@ mcdowells = Restaurant.create({
   location: '8507 queens blvd, Elmhurst, NY 11373',
   cuisine: 'Fast food',
   price: 1,
-  menu_url: 'menus.com/1'
+  menu_url: 'menus.com/1',
+  lat: 40.737302,
+  lng: -73.878663
 })
 
 burger_quen = Restaurant.create({
@@ -26,7 +28,9 @@ burger_quen = Restaurant.create({
   location: '8504 queens blvd, Elmhurst, NY 11373',
   cuisine: 'Fast food',
   price: 1,
-  menu_url: 'menus.com/2'
+  menu_url: 'menus.com/2',
+  lat: 40.736891,
+  lng: 73.879527
 })
 peter_boogers = Restaurant.create({
   name: 'Peter Boogers',
@@ -34,21 +38,27 @@ peter_boogers = Restaurant.create({
   location: '21 broad st, Brooklyn, NY 10708',
   cuisine: 'Steakhouse',
   price: 3,
-  menu_url: 'menus.com/3'
+  menu_url: 'menus.com/3',
+  lat: 40.710185,
+  lng: -73.964259
 })
 orangebees = Restaurant.create({
   name: 'Orangebees',
   description: 'Orange ya glad we arent applebees',
-  location: '8504 queens blvd, Elmhurst, NY 11373',
+  location: '319 W 42nd St # 1, New York, NY 10036',
   cuisine: 'American',
   price: 1,
-  menu_url: 'menus.com/4'
+  menu_url: 'menus.com/4',
+  lat: 40.757583,
+  lng: 73.991110
 })
 sushi_mikes = Restaurant.create({
   name: 'Sushi Mikes',
   description: 'sushini',
-  location: '8504 queens blvd, Elmhurst, NY 11373',
+  location: '1188 Gravesend Neck Rd, Brooklyn, NY 11229',
   cuisine: 'Sushi',
   price: 2,
-  menu_url: 'menus.com/5'
+  menu_url: 'menus.com/5',
+  lat: 40.595165,
+  lng: 73.958413
 })
