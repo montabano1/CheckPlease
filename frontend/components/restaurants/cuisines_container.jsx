@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
-import { CuisineItem } from './cuisine_item'
-import { fetchRestaurants } from '../../actions/restaurant_actions'
+import { CuisineItem } from './cuisine_item';
+import { fetchRestaurants } from '../../actions/restaurant_actions';
 
 const cuisines = [
   'American',
@@ -21,17 +21,32 @@ const cuisines = [
   'Mexican',
   'Farm-to-table',
   'Chinese'
-]
+];
 
 class CuisineContainer extends React.Component {
 
   render() {
     const cuzines = cuisines.map((cuz, idx) => {
-      return (
-        <Link to={`/`} key={idx}>
-          <CuisineItem cuisine={cuz} key={idx} />
-        </Link>
-      );
+      switch (cuz) {
+        case 'Contemporary American':
+          return (
+            <Link to={`/`} key={idx}>
+              <CuisineItem cuisineName={cuz} cuisinePic={'Contemporary'} key={idx} />
+            </Link>
+          );
+        case 'Farm-to-table':
+          return (
+            <Link to={`/`} key={idx}>
+              <CuisineItem cuisineName={cuz} cuisinePic={'FarmToTable'} key={idx} />
+            </Link>
+          );
+        default:
+          return (
+            <Link to={`/`} key={idx}>
+              <CuisineItem cuisineName={cuz} cuisinePic={cuz} key={idx} />
+            </Link>
+          );
+      }
     });
 
 

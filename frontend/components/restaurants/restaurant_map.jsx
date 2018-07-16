@@ -10,6 +10,7 @@ class RestaurantMap extends React.Component {
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
+    new google.maps.Marker({position: mapOptions.center, map: this.map});
   }
 
 
