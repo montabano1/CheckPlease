@@ -19,7 +19,7 @@ export const createAvail = (avail) => {
     data: { avail }
   })
 };
-export const deleteAvail = id => (
+export const deleteAvail = id => {
   return $.ajax({
     method: 'DELETE'
     url: `api/avails/${id}`,
