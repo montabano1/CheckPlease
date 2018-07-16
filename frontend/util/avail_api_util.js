@@ -21,7 +21,7 @@ export const createAvail = (avail) => {
 };
 export const deleteAvail = id => {
   return $.ajax({
-    method: 'DELETE'
-    url: `api/avails/${id}`,
+    method: 'DELETE',
+    url: `api/avails/${id}`
   })
 };
