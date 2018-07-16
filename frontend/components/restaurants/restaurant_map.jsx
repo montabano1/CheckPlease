@@ -6,7 +6,7 @@ class RestaurantMap extends React.Component {
   componentDidMount() {
     const mapOptions = {
       center: { lat: this.props.lat, lng: this.props.lng },
-      zoom: 13
+      zoom: 16
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -14,7 +14,6 @@ class RestaurantMap extends React.Component {
 
 
   render() {
-    debugger
     return (
       <div id='map-container' ref={ map => this.mapNode = map } />
     )

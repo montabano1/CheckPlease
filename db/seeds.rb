@@ -8,6 +8,7 @@
 
 User.delete_all
 Restaurant.delete_all
+Avail.delete_all
 
 monte = User.create({username: 'monte', email: 'monte@monte.com', password: 'password'})
 
@@ -61,4 +62,30 @@ sushi_mikes = Restaurant.create({
   menu_url: 'menus.com/5',
   lat: 40.595165,
   lng: -73.958413
+})
+sushi_daves = Restaurant.create({
+  name: 'Sushi Daves',
+  description: 'sushini too!',
+  location: '1186 Gravesend Neck Rd, Brooklyn, NY 11229',
+  cuisine: 'Sushi',
+  price: 2,
+  menu_url: 'menus.com/5',
+  lat: 40.595165,
+  lng: -73.96
+})
+
+mcdowells_avail1 = Avail.create({
+  restaurant_id: mcdowells.id,
+  datetime: DateTime.new(2018, 7, 23, 16, 30),
+  taken: 'false'
+})
+mcdowells_avail2 = Avail.create({
+  restaurant_id: mcdowells.id,
+  datetime: DateTime.new(2018, 7, 23, 18, 0),
+  taken: 'false'
+})
+mcdowells_avail3 = Avail.create({
+  restaurant_id: mcdowells.id,
+  datetime: DateTime.new(2018, 7, 23, 19, 30),
+  taken: 'false'
 })

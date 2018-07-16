@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as APIUtil from './util/session_api_util';
 import * as actions from './actions/session_actions';
 import * as restactions from './actions/restaurant_actions';
+import * as availactions from './actions/avail_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -26,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.signup = actions.signup;
   window.fetchRestaurants = restactions.fetchRestaurants;
   window.fetchRestaurant = restactions.fetchRestaurant;
+  window.fetchAvail = availactions.fetchAvail;
+  window.fetchAvails = availactions.fetchAvails;
 
   const root = document.getElementById('root');
 

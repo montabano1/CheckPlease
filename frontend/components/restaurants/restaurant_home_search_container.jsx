@@ -8,14 +8,14 @@ export class RestaurantHomeSearchContainer extends React.Component {
 
   render() {
     return (
-      <main className='home-search-container'>
+      <form className='home-search-container'>
         <section className='home-search-container-heading'>Find your table for any occasion</section>
         <section className='home-search-dropdown-left'> DROPDOWN GOES HERE </ section >
         <section className='home-search-dropdown-center'> DROPDOWN GOES HERE </ section >
         <section className='home-search-dropdown-right'> DROPDOWN GOES HERE </ section >
         <section className='home-search-input'> SEARCH INPUT GOES HERE </ section >
         <button className='home-search-submit'> Let's go </ button >
-      </main>
+      </form>
     );
   }
 

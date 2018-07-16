@@ -19,7 +19,8 @@ class Restaurant < ApplicationRecord
     'Chinese'
   ]
 
-
   validates :name, :price, :location, presence: true
+
+  has_many :avails
 
 end

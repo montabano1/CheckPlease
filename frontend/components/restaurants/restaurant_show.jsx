@@ -115,7 +115,7 @@ class RestaurantShow extends React.Component {
                     <RestaurantMap lat={restaurant.lat} lng={restaurant.lng}/>
                   </section>
 
-                  <section className='specifics-address'>35 East 1838th Street New York, NY 10003</section>
+                  <section className='specifics-address'>{restaurant.location}</section>
                     <section className='specifics2'>
                       <span className='specifics-title'> Neighborhood </span>
                       <span className='specifics-description'>Gramercy/ Flatiron</span>
