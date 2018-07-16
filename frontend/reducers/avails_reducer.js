@@ -3,12 +3,14 @@ import {
   RECEIVE_AVAIL,
   REMOVE_AVAIL,
 } from '../actions/avail_actions';
+import { RECEIVE_RESTAURANTS} from '../actions/restaurant_actions'
 import { merge } from 'lodash';
 
 const PostsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_ALL_AVAILS:
+    case RECEIVE_AVAILS:
+    case RECEIVE_RESTAURANTS:
       return merge({}, action.avails);
     case RECEIVE_AVAIL:
       return merge({}, state, {[action.avail.id]: action.avail});

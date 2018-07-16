@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
-import { RestaurantHomeIndexItem } from './restaurant_home_index_item'
-import { fetchRestaurants } from '../../actions/restaurant_actions'
+import { RestaurantHomeIndexItem } from './restaurant_home_index_item';
+import { fetchRestaurants } from '../../actions/restaurant_actions';
 
 
 class RestaurantHomeIndexContainer extends React.Component {
 
   componentDidMount() {
-    this.props.fetchRestaurants()
+    this.props.fetchRestaurants();
   }
 
   render() {

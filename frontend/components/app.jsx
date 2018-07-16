@@ -5,7 +5,7 @@ import LoginContainer from './session/login_container';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
 import RestaurantHomeIndexContainer from './restaurants/restaurant_home_index_container';
 import CuisineContainer from './restaurants/cuisines_container';
-import {RestaurantHomeSearchContainer} from './restaurants/restaurant_home_search_container';
+import RestaurantHomeSearchContainer from './restaurants/restaurant_home_search_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';

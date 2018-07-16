@@ -50,6 +50,7 @@
   font-size: 20px;
 }
 
+
 .home-search-dropdown-right {
   height: 45px;
   width: 180px;
@@ -77,10 +78,12 @@
 }
 .home-search-submit {
   height: 45px;
-  background-color: red;
+  background-color: #da3743;
+  border-color: #b8222d;
   text-align: center;
   border-radius: 3px;
-  width: 80px;
+  width: 180px;
+  color: white;
 }
 
 .home-index-container-heading {

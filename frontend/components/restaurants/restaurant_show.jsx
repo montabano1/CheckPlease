@@ -147,7 +147,3 @@ class RestaurantShow extends React.Component {
 }
 
 export default RestaurantShow;
-
-
-
-// const restaurant = this.state.entities.restaurants[this.props.match.params.restaurantId];
