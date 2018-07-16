@@ -33,6 +33,3 @@ class AvailsController < ApplicationController
   end
 
 end
-
-
-end
