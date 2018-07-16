@@ -24,7 +24,7 @@ mcdowells = Restaurant.create({
 })
 
 burger_quen = Restaurant.create({
-  name: 'Burger Quen',
+  name: 'Burger Queen',
   description: 'let them eat burgers',
   location: '8504 queens blvd, Elmhurst, NY 11373',
   cuisine: 'Fast food',

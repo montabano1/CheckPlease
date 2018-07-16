@@ -42,9 +42,9 @@ export class RestaurantHomeSearchContainer extends React.Component {
           <option value="23:00">11:00 PM</option>
           <option value="23:30">11:30 PM</option>
         </ select >
-        <select className='home-search-dropdown-right'> 2 people
+        <select className='home-search-dropdown-right' defaultValue='2'> 2 people
           <option value='1'> 1 person</option>
-          <option value='2' selected> 2 people</option>
+          <option value='2'> 2 people</option>
           <option value='3'> 3 people</option>
           <option value='4'> 4 people</option>
           <option value='5'> 5 people</option>

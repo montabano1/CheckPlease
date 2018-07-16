@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 export function RestaurantHomeIndexItem ({restaurant}) {
+  let picName = restaurant.name.split(' ').join('');
   return (
     <section className='home-index-item'>
       <section className='home-index-picture'>
-        <img src={window.image1} />
+        <img src={window[`${picName}`]} />
       </section>
       <section className='home-index-name'>
         {restaurant.name}
@@ -20,6 +21,5 @@ export function RestaurantHomeIndexItem ({restaurant}) {
         BOOKED AMT GOES HERE
       </section>
     </section>
-
-  )
+  );
 }
