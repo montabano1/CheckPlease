@@ -6,7 +6,7 @@ import {
 import { RECEIVE_RESTAURANTS} from '../actions/restaurant_actions'
 import { merge } from 'lodash';
 
-const PostsReducer = (state = {}, action) => {
+const AvailsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_AVAILS:
@@ -23,4 +23,4 @@ const PostsReducer = (state = {}, action) => {
   }
 };
 
-export default PostsReducer;
+export default AvailsReducer;

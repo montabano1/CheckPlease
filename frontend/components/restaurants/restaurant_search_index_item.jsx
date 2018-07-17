@@ -17,7 +17,7 @@ export function RestaurantSearchIndexItem ({restaurant, avails, avas}) {
 
     return (
       <div className='search-index-avail' key={avail.id}>
-        <Link to={`/`} key={avail.id}>
+        <Link to={`/reservation/${restaurant.id}?${time}`} key={avail.id}>
           <span className='search-index-time' key={avail.id}>{time}</span>
         </Link>
       </div>

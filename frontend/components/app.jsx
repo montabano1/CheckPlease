@@ -7,6 +7,7 @@ import RestaurantHomeIndexContainer from './restaurants/restaurant_home_index_co
 import CuisineContainer from './restaurants/cuisines_container';
 import RestaurantHomeSearchContainer from './restaurants/restaurant_home_search_container';
 import RestaurantSearchIndexContainer from './restaurants/restaurant_search_index_container';
+import ReservationContainer from './restaurants/reservation_container';
 import { Route, Link, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';
@@ -29,6 +30,7 @@ const App = () => (
     <Route exact path="/" component={RestaurantHomeSearchContainer} />
     <Route exact path="/" component={RestaurantHomeIndexContainer} />
     <Route exact path="/" component={CuisineContainer} />
+    <Route path="/reservation" component={ReservationContainer} />
 
     <Switch>
       <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
