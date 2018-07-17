@@ -6,7 +6,8 @@ import RestaurantShowContainer from './restaurants/restaurant_show_container';
 import RestaurantHomeIndexContainer from './restaurants/restaurant_home_index_container';
 import CuisineContainer from './restaurants/cuisines_container';
 import RestaurantHomeSearchContainer from './restaurants/restaurant_home_search_container';
-import { Route, Switch } from 'react-router-dom';
+import RestaurantSearchIndexContainer from './restaurants/restaurant_search_index_container';
+import { Route, Link, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal/modal';
 
@@ -20,14 +21,18 @@ const App = () => (
     </span>
     <Modal className='modal'/>
     <header>
-      <h1 className='logo'>CheckPlease!</h1>
+      <Link to='/' >
+        <h1 className='logo'>CheckPlease!</h1>
+      </Link>
       <GreetingContainer />
     </header>
     <Route exact path="/" component={RestaurantHomeSearchContainer} />
     <Route exact path="/" component={RestaurantHomeIndexContainer} />
     <Route exact path="/" component={CuisineContainer} />
+
     <Switch>
       <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
+      <Route path="/restaurant/search" component={RestaurantSearchIndexContainer} />
     </Switch>
   </div>
 );

@@ -1,0 +1,19 @@
+.search-index-item {
+  width: 700px;
+  height: 140px;
+  padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.search-index-picture {
+  height: 140px;
+  width: 140px;
+}
+
+.search-index-picture img{
+  border: none;
+  border-radius: 5px;
+}
