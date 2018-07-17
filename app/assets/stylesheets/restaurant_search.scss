@@ -1,5 +1,17 @@
-.search-index-item {
-  width: 700px;
+.search-index-container {
+  height: 800px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.search-filters {
+  height: 800px;
+  width: 200px;
+  background-color: lightgrey;
+}
+.search-index-item-container {
+  width: 800px;
   height: 140px;
   padding: 14px;
   display: flex;
@@ -7,13 +19,71 @@
   flex-direction: row;
   align-content: flex-start;
 }
-
+.search-index-item {
+  width: 700px;
+  height: 140px;
+  padding: 0 0 14px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  border-bottom: 1px solid lightgrey;
+}
 .search-index-picture {
   height: 140px;
   width: 140px;
+  margin-bottom: 10px;
 }
-
 .search-index-picture img{
   border: none;
   border-radius: 5px;
+}
+.search-index-info {
+  margin-left: 15px;
+  max-width: 500px;
+}
+.search-index-row {
+  width: 530px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5px;
+}
+.search-index-name {
+  font-family: 'ABeeZee', sans-serif;
+  color: blue;
+  font-size: 20px;
+}
+.search-index-avail-row {
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  margin-top: 5px;
+}
+.search-index-avail {
+  background-color: red;
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+  margin-right: 6px;
+  text-align: center;
+  font-family: 'ABeeZee', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+}
+.search-index-time {
+  position: absolute;
+  top: 5px;
+  right: 27px;
+}
+
+.search-index-empty {
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+  margin-right: 6px;
+  background: rgba(0,0,0,.06);
+  
 }

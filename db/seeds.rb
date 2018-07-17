@@ -76,16 +76,36 @@ sushi_daves = Restaurant.create({
 
 mcdowells_avail1 = Avail.create({
   restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 23, 16, 30),
+  datetime: DateTime.new(2018, 7, 17, 19, 30),
   taken: 'false'
 })
 mcdowells_avail2 = Avail.create({
   restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 23, 18, 0),
+  datetime: DateTime.new(2018, 7, 17, 21, 0),
   taken: 'false'
 })
 mcdowells_avail3 = Avail.create({
   restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 23, 19, 30),
+  datetime: DateTime.new(2018, 7, 17, 21, 30),
+  taken: 'true'
+})
+mcdowells_avail4 = Avail.create({
+  restaurant_id: mcdowells.id,
+  datetime: DateTime.new(2018, 7, 17, 22, 0),
+  taken: 'false'
+})
+mcdowells_avail5 = Avail.create({
+  restaurant_id: mcdowells.id,
+  datetime: DateTime.new(2018, 7, 17, 22, 30),
+  taken: 'false'
+})
+mcdowells_avail6 = Avail.create({
+  restaurant_id: mcdowells.id,
+  datetime: DateTime.new(2018, 7, 17, 23, 30),
+  taken: 'false'
+})
+peter_boogers_avail1 = Avail.create({
+  restaurant_id: peter_boogers.id,
+  datetime: DateTime.new(2018, 7, 17, 20, 30),
   taken: 'false'
 })

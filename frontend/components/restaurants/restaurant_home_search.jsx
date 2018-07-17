@@ -7,7 +7,12 @@ class RestaurantHomeSearch extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {searchdate: '', searchtime: '', searchppl: '', searchcuisine:''};
+    const today = new Date();
+    this.state = {
+      searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${today.getDate()}`,
+      searchtime: '19:00',
+      searchppl: '2',
+      searchcuisine:''};
   }
 
   update(field) {
@@ -29,9 +34,10 @@ class RestaurantHomeSearch extends React.Component {
           <input
             type="date"
             value={this.state.searchdate}
-            onChange={this.update('searchdate')}/>
+            onChange={this.update('searchdate')}
+            />
         </ section >
-        <select className='home-search-dropdown-center' defaultValue='19:00'
+        <select className='home-search-dropdown-center'
           value={this.state.searchtime}
           onChange={this.update('searchtime')}>
           <option className= 'time-option' value="10:30">10:30 AM</option>
@@ -62,7 +68,7 @@ class RestaurantHomeSearch extends React.Component {
           <option className= 'time-option' value="23:00">11:00 PM</option>
           <option className= 'time-option' value="23:30">11:30 PM</option>
         </ select >
-        <select className='home-search-dropdown-right' defaultValue='2'
+        <select className='home-search-dropdown-right'
           value={this.state.searchppl}
           onChange={this.update('searchppl')}>
           <option value='1'> 1 person</option>
