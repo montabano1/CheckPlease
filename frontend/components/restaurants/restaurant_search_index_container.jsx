@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import RestaurantSearchIndexItemContainer from './restaurant_search_index_item_container';
 import { fetchRestaurants } from '../../actions/restaurant_actions';
 
-
-
 class RestaurantSearchIndexContainer extends React.Component {
 
   render() {

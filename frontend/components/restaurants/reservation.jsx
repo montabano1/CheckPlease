@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createRestaurant } from '../../actions/reservation_actions';
 
-class RestaurantShow extends React.Component {
+class Reservation extends React.Component {
 
   constructor(props) {
     super(props);
-    debugger
     this.state = {
       user_id: props.currentUser.id,
       restaurant_id: parseInt(props.restaurantId)
@@ -37,4 +36,4 @@ class RestaurantShow extends React.Component {
   }
 }
 
-export default RestaurantShow;
+export default Reservation;

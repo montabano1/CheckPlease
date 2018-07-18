@@ -2,12 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { RestaurantSearchIndexItem } from './restaurant_search_index_item';
+import { showConfirmation } from '../../actions/reservation_actions'
 
 class RestaurantSearchIndexItemContainer extends React.Component {
 
   render() {
     return (
-      <RestaurantSearchIndexItem className='search-index-item' key={restaurant.id}/>
+      <RestaurantSearchIndexItem className='search-index-item'
+      avas={this.props.avas}
+      restaurant={this.props.restaurant}
+      showConfirmation={this.props.showConfirmation}/>
     );
   }
 }
@@ -31,6 +35,11 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    showConfirmation: (payload) => dispatch(showConfirmation(payload))
+  }
+}
 
 
-export default connect(mapStateToProps, null)(RestaurantSearchIndexItem);
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantSearchIndexItemContainer);

@@ -2,8 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
-export function RestaurantSearchIndexItem ({restaurant, avails, avas}) {
+export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation}) {
+
+  const handleClick = (e) => {
+    showConfirmation(e.target.innerHTML);
+  }
+
   let picName = restaurant.name.split(' ').join('');
+
   const availabilities = avas.map((avail) => {
     if (avail.taken === 'true') {
       return <div className='search-index-empty' key={avail.id}/>
@@ -14,11 +20,14 @@ export function RestaurantSearchIndexItem ({restaurant, avails, avas}) {
     } else {
       time = avail.datetime.slice(11,16);
     }
+    const payload = {restaurant: restaurant, availid: avail.id, time: time}
 
     return (
       <div className='search-index-avail' key={avail.id}>
-        <Link to={`/reservation/${restaurant.id}?${time}`} key={avail.id}>
-          <span className='search-index-time' key={avail.id}>{time}</span>
+        <Link to='/reservation'>
+          <button onClick={() => showConfirmation(payload)}>
+          {time}
+          </button>
         </Link>
       </div>
     );}

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createReservation } from '../../actions/reservation_actions';
-import reservation from './reservation';
+import Reservation from './reservation';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(reservation);
+export default connect(mapStateToProps, mapDispatchToProps)(Reservation);

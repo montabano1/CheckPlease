@@ -2,6 +2,7 @@ import * as APIUtil from '../util/reservation_api_util';
 
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
+export const RESERVATION_CONFIRMATION = 'RESERVATION_CONFIRMATION';
 
 export const receiveReservation = reservation => {
   return {
@@ -17,6 +18,16 @@ export const removeReservation = reservationId => {
   };
 };
 
+export const reservationConfirmation = payload => {
+  return {
+    type: RESERVATION_CONFIRMATION,
+    payload
+  };
+};
+
+export const showConfirmation = payload => {
+  return dispatch => dispatch(reservationConfirmation(payload));
+};
 
 export const createReservation = (reservation) => {
   return dispatch => {
