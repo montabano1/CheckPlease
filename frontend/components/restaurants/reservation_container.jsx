@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import { createReservation } from '../../actions/reservation_actions';
 import Reservation from './reservation';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    currentUser: state.entities.users[state.session.id],
-    restaurantId: ownProps.location.pathname.split('/')[ownProps.location.pathname.split('/').length-1],
-    time: ownProps.location.search.split('/')[ownProps.location.search.split('/').length-1]
+    restaurant: state.session.conf.restaurant,
+    availid: state.session.conf.availid,
+    time: state.session.conf.time,
+    currentUser: state.entities.users[state.session.id] || {}
   };
 };
 

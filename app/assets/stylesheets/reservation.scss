@@ -1,0 +1,112 @@
+.reservation-show {
+  background-color: #f7f7f7;
+  height: 100%;
+  font-family: arial;
+}
+
+.reservation-header {
+  height: 70px;
+  width: 100%;
+  text-align: left;
+  padding: 40px 0 20px 40px;
+  font-size: 30px;
+  border-bottom: 1px solid lightgrey;
+  background-color: white;
+}
+
+.reservation-info {
+  height: 100px;
+  width: fit-content;
+  background-color: white;
+  margin: 30px 0 0 20px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.reservation-picture {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+.reservation-picture img {
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.reservation-guests {
+  height: 80px;
+  padding: 10px;
+  margin-left: 20px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  font-family: arial;
+}
+.reservation-guests-value {
+  font-weight: 100;
+  font-size: 25px;
+  font-family: arial;
+}
+.reservation-date {
+  height: 80px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 800;
+}
+.reservation-date-value {
+  font-weight: 100;
+  font-size: 25px;
+}
+.reservation-time {
+  height: 80px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 800;
+}
+.reservation-time-value {
+  font-weight: 100;
+  font-size: 25px;
+}
+.reservation-name {
+  height: 80px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 800;
+  padding-right: 50px;
+}
+.reservation-name-value {
+  font-weight: 100;
+  font-size: 25px;
+  color: blue;
+}
+
+.reservation-submit {
+  height: 40px;
+  width: fit-content;
+  background-color: #da3743;
+  color: white;
+  margin: 40px 0 200px 100px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  padding: 0 10px;
+  font-weight: 800;
+}
