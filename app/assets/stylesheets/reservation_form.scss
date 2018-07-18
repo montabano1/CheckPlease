@@ -1,0 +1,111 @@
+.restaurant-show-reservation-container {
+  position: absolute;
+  top: 0;
+}
+
+.reservation-form-container {
+  width: 320px;
+  height: fit-content;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: rows;
+  flex-wrap: wrap;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 15px;
+  box-shadow: 1px 10px 35px 3px rgba(0,0,0,0.75);
+  margin-left: 50px;
+  position: sticky;
+  top: 100px;
+}
+
+.reservation-form-container-heading {
+  font-size: 30px;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 10px;
+}
+.reservation-party-title {
+  font-size: 15px;
+  width: 320px;
+  margin: 10px 0;
+}
+.reservation-title {
+  margin-top: 20px;
+  font-size: 15px;
+  width: 160px;
+}
+.reservation-form-title-content {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.reservation-party-dropdown {
+  height: 30px;
+  width: 300px;
+  background-color: white;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 20px;
+  border: none;
+  margin: 0 10px;
+}
+.reservation-date-dropdown {
+  height: 45px;
+  background-color: white;
+  border-radius: 3px;
+  font-family: 'ABeeZee', sans-serif;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 160px;
+  box-sizing: border-box;
+}
+.reservation-time-dropdown {
+  height: 45px;
+  width: 160px;
+  background-color: white;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-radius: 3px;
+  position: relative;
+  font-family: 'ABeeZee', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: none;
+}
+.reservation-form-submit {
+  height: 45px;
+  background-color: #da3743;
+  border-color: #b8222d;
+  text-align: center;
+  width: 280px;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.availabilities {
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-index-avail-show {
+  background-color: #da3743;
+  border-color: #b8222d;
+  width: 85px;
+  height: 35px;
+  margin: 4px 6px 10px 0;
+  text-align: center;
+  font-family: 'ABeeZee', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+}

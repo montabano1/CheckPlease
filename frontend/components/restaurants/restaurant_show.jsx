@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchRestaurant } from './restaurant_show_container';
 import RestaurantMap from './restaurant_map';
+import RestaurantShowReservationContainer from './restaurant_show_reservation_container';
 
 class RestaurantShow extends React.Component {
 
@@ -138,7 +139,7 @@ class RestaurantShow extends React.Component {
                       <span className='specifics-title'> Additional </span>
                       <span className='specifics-description'>Bar Dining, Bar/Lounge, Beer</span>
                     </section>
-
+                    <RestaurantShowReservationContainer restaurant={restaurant} />
                 </div>
             </div>
           </main>

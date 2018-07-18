@@ -1,6 +1,4 @@
 import React from 'react';
-import { fetchRestaurants } from '../../actions/restaurant_actions';
-import { RestaurantHomeIndexItem } from './restaurant_home_index_item';
 
 class RestaurantHomeSearch extends React.Component {
 

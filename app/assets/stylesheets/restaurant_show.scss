@@ -1,3 +1,13 @@
+.restaurant-show-reservation-container {
+  position: relative;
+}
+
+.restaurant-show-page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .single-restaurant-show {
   width: 100%;
   background-color: white;
@@ -31,7 +41,7 @@
 }
 
 .restaurant-info-container {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 .restaurant-show-name {
   display: inline-block;

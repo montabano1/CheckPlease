@@ -11,7 +11,6 @@ export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation})
       return <div className='search-index-empty' key={avail.id}/>
     } else {
     let time;
-    debugger
     if (avail.datetime[11] === '0') {
       time = avail.datetime.slice(12,16) + ' AM';
     } else if (parseInt(avail.datetime.slice(11,13)) > 12) {
