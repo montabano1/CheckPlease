@@ -8,7 +8,9 @@ const mapStateToProps = (state) => {
     restaurant: state.session.conf.restaurant,
     availid: state.session.conf.availid,
     time: state.session.conf.time,
-    currentUser: state.entities.users[state.session.id] || {}
+    currentUser: state.entities.users[state.session.id] || {},
+    searchppl: state.session.searchppl,
+    date: state.session.conf.date
   };
 };
 

@@ -19,3 +19,5 @@ json.set! :avails do
     end
   end
 end
+
+json.searchppl @searchppl

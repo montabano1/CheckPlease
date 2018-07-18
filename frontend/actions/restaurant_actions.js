@@ -4,11 +4,12 @@ import * as SearchUtil from '../util/search_api_util';
 export const RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
 
-export const receiveRestaurants = ({restaurants, avails}) => {
+export const receiveRestaurants = ({restaurants, avails, searchppl}) => {
   return {
     type: RECEIVE_RESTAURANTS,
     restaurants: restaurants,
-    avails: avails
+    avails: avails,
+    searchppl: searchppl || {}
   };
 };
 

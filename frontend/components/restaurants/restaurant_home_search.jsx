@@ -11,7 +11,7 @@ class RestaurantHomeSearch extends React.Component {
     this.state = {
       searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${today.getDate()}`,
       searchtime: '19:00',
-      searchppl: '2',
+      searchppl: '2 people',
       searchcuisine:''};
   }
 
@@ -71,15 +71,15 @@ class RestaurantHomeSearch extends React.Component {
         <select className='home-search-dropdown-right'
           value={this.state.searchppl}
           onChange={this.update('searchppl')}>
-          <option value='1'> 1 person</option>
-          <option value='2'> 2 people</option>
-          <option value='3'> 3 people</option>
-          <option value='4'> 4 people</option>
-          <option value='5'> 5 people</option>
-          <option value='6'> 6 people</option>
-          <option value='7'> 7 people</option>
-          <option value='8'> 8 people</option>
-          <option value='9'> 9 people</option>
+          <option value='1 person'> 1 person</option>
+          <option value='2 people'> 2 people</option>
+          <option value='3 people'> 3 people</option>
+          <option value='4 people'> 4 people</option>
+          <option value='5 people'> 5 people</option>
+          <option value='6 people'> 6 people</option>
+          <option value='7 people'> 7 people</option>
+          <option value='8 people'> 8 people</option>
+          <option value='9 people'> 9 people</option>
         </ select >
         <input
           type='text'

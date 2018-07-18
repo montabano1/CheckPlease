@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom'
 
 export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation}) {
 
-  const handleClick = (e) => {
-    showConfirmation(e.target.innerHTML);
-  }
-
   let picName = restaurant.name.split(' ').join('');
 
   const availabilities = avas.map((avail) => {
@@ -15,18 +11,31 @@ export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation})
       return <div className='search-index-empty' key={avail.id}/>
     } else {
     let time;
+    debugger
     if (avail.datetime[11] === '0') {
-      time = avail.datetime.slice(12,16);
+      time = avail.datetime.slice(12,16) + ' AM';
+    } else if (parseInt(avail.datetime.slice(11,13)) > 12) {
+      let temp = ((parseInt(avail.datetime.slice(11,13))+88).toString());
+      time = temp.slice(1) + avail.datetime.slice(13,16) + ' PM';
+      if (time[0] === '0') {
+        time = time.slice(1);
+      }
     } else {
-      time = avail.datetime.slice(11,16);
+      time = avail.datetime.slice(11,16) + ' AM';
     }
-    const payload = {restaurant: restaurant, availid: avail.id, time: time}
+
+    const payload = {
+      restaurant: restaurant,
+      availid: avail.id,
+      time: time,
+      date: avail.datetime.slice(0,10)
+    }
 
     return (
       <div className='search-index-avail' key={avail.id}>
         <Link to='/reservation'>
           <button onClick={() => showConfirmation(payload)}>
-          {time}
+          <span className='search-index-time'> {time} </span>
           </button>
         </Link>
       </div>

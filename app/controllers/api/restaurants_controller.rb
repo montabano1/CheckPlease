@@ -28,7 +28,7 @@ class Api::RestaurantsController < ApplicationController
 
         (Restaurant.find(ava.restaurant_id).cuisine.downcase.include?(restaurant_params[:searchcuisine].downcase) ||
         Restaurant.find(ava.restaurant_id).name.downcase.include?(restaurant_params[:searchcuisine].downcase)))
-
+        @searchppl = restaurant_params[:searchppl]
         @avails << ava
         @restaurants << Restaurant.find(ava.restaurant_id) unless @restaurants.include?(Restaurant.find(ava.restaurant_id))
       end

@@ -22,7 +22,9 @@ class Reservation extends React.Component {
   }
 
   render() {
-    let picName = this.props.restaurant.name.split(' ').join('');
+    const picName = this.props.restaurant.name.split(' ').join('');
+    const date = this.props.date
+    const datestring = new Date(parseInt(date.slice(0,4)),parseInt(date.slice(5,7))-1, parseInt(date.slice(8,10))).toDateString()
     return (
       <div className='reservation-show'>
         <div className='reservation-header'>
@@ -34,19 +36,19 @@ class Reservation extends React.Component {
           </section>
           <section className='reservation-guests'>
             <span>GUESTS</span>
-            <span className='reservation-guests-value'>2 people</span>
+            <span className='reservation-guests-value'>{this.props.searchppl}</span>
           </section>
           <section className='reservation-date'>
             <span>DATE</span>
-            <span className='reservation-date-value'>Wed, Jul 25, 2018</span>
+            <span className='reservation-date-value'>{datestring}</span>
           </section>
           <section className='reservation-time'>
             <span>TIME</span>
-            <span className='reservation-time-value'>5:30 PM</span>
+            <span className='reservation-time-value'>{this.props.time}</span>
           </section>
           <section className='reservation-name'>
             <span>RESTAURANT</span>
-            <span className='reservation-name-value'>Keens Steakhouse</span>
+            <span className='reservation-name-value'>{this.props.restaurant.name}</span>
           </section>
         </div>
         <form onSubmit={this.handleSubmit}>
