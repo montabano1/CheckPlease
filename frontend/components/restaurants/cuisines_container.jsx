@@ -12,7 +12,7 @@ const cuisines = [
   'Seafood',
   'Mediterranean',
   'Japanese',
-  'Contemporary American',
+  'Contemporary',
   'Indian',
   'Greek',
   'Pizzeria',
@@ -28,12 +28,6 @@ class CuisineContainer extends React.Component {
   render() {
     const cuzines = cuisines.map((cuz, idx) => {
       switch (cuz) {
-        case 'Contemporary American':
-          return (
-            <Link to={`/`} key={idx}>
-              <CuisineItem cuisineName={cuz} cuisinePic={'Contemporary'} key={idx} />
-            </Link>
-          );
         case 'Farm-to-table':
           return (
             <Link to={`/`} key={idx}>

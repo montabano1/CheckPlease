@@ -8,7 +8,7 @@ class Restaurant < ApplicationRecord
     'Seafood',
     'Mediterranean',
     'Japanese',
-    'Contemporary American',
+    'Contemporary',
     'Indian',
     'Greek',
     'Pizzeria',

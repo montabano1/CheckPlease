@@ -48,14 +48,18 @@ export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation})
   }
   return (
     <section className='search-index-item'>
-      <section className='search-index-picture'>
-        <img src={window[`${picName}`]} />
-      </section>
+      <Link to={`/restaurants/${restaurant.id}`}>
+        <section className='search-index-picture'>
+          <img src={window[`${picName}`]} />
+        </section>
+      </Link>
       <div className='search-index-info'>
         <div className='search-index-row'>
-          <section className='search-index-name'>
-            {restaurant.name}
-          </section>
+          <Link to={`/restaurants/${restaurant.id}`}>
+            <section className='search-index-name'>
+              {restaurant.name}
+            </section>
+          </Link>
         </div>
         <div className='search-index-row'>
           <section className='search-index-rating'>

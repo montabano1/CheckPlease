@@ -5,7 +5,6 @@ import { searchRestaurants } from '../../actions/restaurant_actions';
 
 const mapStateToProps = state => {
   return {
-    // search: {searchdate: '', searchtime: '', searchppl: '', searchcuisine:''}
   };
 };
 

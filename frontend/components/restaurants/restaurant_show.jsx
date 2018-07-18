@@ -73,7 +73,9 @@ class RestaurantShow extends React.Component {
                 <strong>Price - {restaurant.price}</strong>
               </div>
                 <section className='restaurant-description'>
-                  Description - {restaurant.description}
+                  <span className='restaurant-description-value'>
+                    {restaurant.description}
+                  </span>
                 </section>
                 <div className='restaurant-specifics'>
                   <section className='specifics'>

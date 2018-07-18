@@ -12,7 +12,8 @@ class RestaurantHomeSearch extends React.Component {
       searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${today.getDate()}`,
       searchtime: '19:00',
       searchppl: '2 people',
-      searchcuisine:''};
+      searchcuisine:''
+    };
   }
 
   update(field) {
