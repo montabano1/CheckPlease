@@ -3,7 +3,7 @@ import {
   RECEIVE_AVAIL,
   REMOVE_AVAIL,
 } from '../actions/avail_actions';
-import { RECEIVE_RESTAURANTS} from '../actions/restaurant_actions'
+import { RECEIVE_RESTAURANTS} from '../actions/restaurant_actions';
 import { merge } from 'lodash';
 
 const AvailsReducer = (state = {}, action) => {

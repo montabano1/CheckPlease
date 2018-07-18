@@ -9,6 +9,7 @@
 User.delete_all
 Restaurant.delete_all
 Avail.delete_all
+Reservation.delete_all
 
 monte = User.create({username: 'monte', email: 'monte@monte.com', password: 'password'})
 
@@ -74,38 +75,66 @@ sushi_daves = Restaurant.create({
   lng: -73.96
 })
 
-mcdowells_avail1 = Avail.create({
-  restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 17, 19, 30),
-  taken: 'false'
-})
-mcdowells_avail2 = Avail.create({
-  restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 17, 21, 0),
-  taken: 'false'
-})
-mcdowells_avail3 = Avail.create({
-  restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 17, 21, 30),
-  taken: 'true'
-})
-mcdowells_avail4 = Avail.create({
-  restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 17, 22, 0),
-  taken: 'false'
-})
-mcdowells_avail5 = Avail.create({
-  restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 17, 22, 30),
-  taken: 'false'
-})
-mcdowells_avail6 = Avail.create({
-  restaurant_id: mcdowells.id,
-  datetime: DateTime.new(2018, 7, 17, 23, 30),
-  taken: 'false'
-})
-peter_boogers_avail1 = Avail.create({
-  restaurant_id: peter_boogers.id,
-  datetime: DateTime.new(2018, 7, 17, 20, 30),
-  taken: 'false'
-})
+Restaurant.all.each do |res|
+  i = 0
+  day = Time.now.day
+  month = Time.now.month
+  while i < 7
+    hour = 11
+    while hour < 24
+      Avail.create({
+        restaurant_id: res.id,
+        datetime: DateTime.new(2018, month, day, hour, 0),
+        taken: 'false'
+        })
+      Avail.create({
+        restaurant_id: res.id,
+        datetime: DateTime.new(2018, month, day, hour, 30),
+        taken: 'false'
+        })
+      hour += 1
+    end
+    day += 1
+    if day > 30
+      day = 1
+      month += 1
+    end
+    i += 1
+  end
+end
+
+# mcdowells_avail1 = Avail.create({
+#   restaurant_id: mcdowells.id,
+#   datetime: DateTime.new(2018, 7, 17, 19, 30),
+#   taken: 'false'
+# })
+# mcdowells_avail2 = Avail.create({
+#   restaurant_id: mcdowells.id,
+#   datetime: DateTime.new(2018, 7, 17, 21, 0),
+#   taken: 'false'
+# })
+# mcdowells_avail3 = Avail.create({
+#   restaurant_id: mcdowells.id,
+#   datetime: DateTime.new(2018, 7, 17, 21, 30),
+#   taken: 'true'
+# })
+# mcdowells_avail4 = Avail.create({
+#   restaurant_id: mcdowells.id,
+#   datetime: DateTime.new(2018, 7, 17, 22, 0),
+#   taken: 'false'
+# })
+# mcdowells_avail5 = Avail.create({
+#   restaurant_id: mcdowells.id,
+#   datetime: DateTime.new(2018, 7, 17, 22, 30),
+#   taken: 'false'
+# })
+# mcdowells_avail6 = Avail.create({
+#   restaurant_id: mcdowells.id,
+#   datetime: DateTime.new(2018, 7, 17, 23, 30),
+#   taken: 'false'
+# })
+# peter_boogers_avail1 = Avail.create({
+#   restaurant_id: peter_boogers.id,
+#   datetime: DateTime.new(2018, 7, 17, 20, 30),
+#   taken: 'false'
+# })

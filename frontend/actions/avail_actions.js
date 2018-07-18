@@ -47,6 +47,13 @@ export const createAvail = (avail) => {
     );
   };
 };
+export const updateAvail = id => {
+  return dispatch => {
+    return APIUtil.updateAvail(id).then(
+      avail => dispatch(receiveAvail(avail))
+    );
+  };
+};
 export const deleteAvail = (availId) => {
   return dispatch => {
     return APIUtil.deleteAvail(availId).then(

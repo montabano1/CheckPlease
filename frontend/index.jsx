@@ -4,6 +4,7 @@ import * as APIUtil from './util/session_api_util';
 import * as actions from './actions/session_actions';
 import * as restactions from './actions/restaurant_actions';
 import * as availactions from './actions/avail_actions';
+import * as rezactions from './actions/reservation_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchRestaurant = restactions.fetchRestaurant;
   window.fetchAvail = availactions.fetchAvail;
   window.fetchAvails = availactions.fetchAvails;
+  window.createReservation = rezactions.createReservation;
 
   const root = document.getElementById('root');
 

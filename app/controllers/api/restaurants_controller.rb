@@ -21,15 +21,14 @@ class Api::RestaurantsController < ApplicationController
   def search
     @avails = []
     @restaurants = []
-    availabilities = Avail.all.sort_by {|a| [a.datetime.hour, a.datetime.min] }
-    availabilities.each do |ava|
+    Avail.all.each do |ava|
       if (restaurant_params[:searchdate][-2..-1].to_i== ava.datetime.day &&
         restaurant_params[:searchdate][-5..-4].to_i == ava.datetime.month &&
         restaurant_params[:searchtime][0..1].to_i <= ava.datetime.hour &&
 
-        (restaurant_params[:searchcuisine].downcase ==
-          Restaurant.find(ava.restaurant_id).cuisine.downcase ||
-        Restaurant.find(ava.restaurant_id).name.downcase.include?(restaurant_params[:searchcuisine])))
+        (Restaurant.find(ava.restaurant_id).cuisine.downcase.include?(restaurant_params[:searchcuisine].downcase) ||
+        Restaurant.find(ava.restaurant_id).name.downcase.include?(restaurant_params[:searchcuisine].downcase)))
+
         @avails << ava
         @restaurants << Restaurant.find(ava.restaurant_id) unless @restaurants.include?(Restaurant.find(ava.restaurant_id))
       end

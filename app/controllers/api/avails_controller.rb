@@ -1,4 +1,4 @@
-class AvailsController < ApplicationController
+class Api::AvailsController < ApplicationController
 
   def index
     @avails = Avail.all
@@ -14,6 +14,20 @@ class AvailsController < ApplicationController
       render :show
     else
       render json: ['Something went wrong with creating your avail']
+    end
+  end
+
+  def update
+    @avail = Avail.find(params[:id])
+    if @avail[:taken] == 'false'
+      @avail[:taken] = 'true'
+    else
+      @avail[:taken] = 'false'
+    end
+    if @avail.save
+      render :show
+    else
+      render json: ['Something went wrong with changing your avail']
     end
   end
 

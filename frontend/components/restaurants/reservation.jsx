@@ -15,8 +15,9 @@ class Reservation extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReservation(this.state).then(() => {
-      this.props.history.push('/confirmation')
+    this.props.createReservation(this.state);
+    this.props.updateAvail(this.state.avail_id).then(() => {
+      this.props.history.push('/')
     });
   }
 
