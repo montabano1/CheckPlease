@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { RestaurantHomeIndexItem } from './restaurant_home_index_item';
 import { fetchRestaurants } from '../../actions/restaurant_actions';
 
-
 class RestaurantHomeIndexContainer extends React.Component {
 
   componentDidMount() {
@@ -42,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchRestaurants: () => dispatch(fetchRestaurants())
+    fetchRestaurants: () => dispatch(fetchRestaurants()),
   };
 };
 

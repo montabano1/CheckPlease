@@ -10,6 +10,7 @@ User.delete_all
 Restaurant.delete_all
 Avail.delete_all
 Reservation.delete_all
+Review.delete_all
 
 monte = User.create({username: 'monte', email: 'monte@monte.com', password: 'password'})
 
@@ -143,6 +144,12 @@ maclarens = Restaurant.create({
 })
 
 Restaurant.all.each do |res|
+  Review.create({
+    body:'I dont think' + res.name + ' is my favorite restaurant, i dont know which is. Maybe Uncle Jerrys Steakhouse - monte',
+    rating: rand(4) + 1,
+    restaurant_id: res.id,
+    author_id: monte.id
+  })
   i = 0
   day = Time.now.day
   month = Time.now.month
@@ -169,3 +176,10 @@ Restaurant.all.each do |res|
     i += 1
   end
 end
+
+review1 = Review.create({
+  body: 'mcdowells reminds me of somewhere else',
+  rating: 5,
+  restaurant_id: mcdowells.id,
+  author_id: monte.id
+  })

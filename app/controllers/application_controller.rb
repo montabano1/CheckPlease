@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :log_out!
+  helper_method :current_user, :logged_in?, :log_out!, :require_logged_in
 
   private
 

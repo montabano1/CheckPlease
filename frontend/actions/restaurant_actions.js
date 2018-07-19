@@ -3,6 +3,9 @@ import * as SearchUtil from '../util/search_api_util';
 
 export const RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+
+
 
 export const receiveRestaurants = ({restaurants, avails, searchppl}) => {
   return {
@@ -20,6 +23,12 @@ export const receiveRestaurant = restaurant => {
   };
 };
 
+export const receiveReview = ({ review, average_rating, author }) => ({
+  type: RECEIVE_REVIEW,
+  review,
+  average_rating,
+  author,
+});
 export const fetchRestaurants = () => {
   return dispatch => {
     return APIUtil.fetchRestaurants().then(
@@ -50,3 +59,10 @@ export const createRestaurant = (restaurant) => {
     );
   };
 };
+
+
+export const createReview = review => dispatch => (
+  APIUtil.createReview(review).then(review => (
+    dispatch(receiveReview(review))
+  ))
+);

@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { fetchRestaurant } from './restaurant_show_container';
 import RestaurantMap from './restaurant_map';
 import RestaurantShowReservationContainer from './restaurant_show_reservation_container';
+import { ProtectedRoute } from '../../util/route_util';
+import { ReviewLink } from '../../util/link_util';
+import ReviewListItemContainer from './review_list_item_container';
+import ReviewFormContainer from './review_form_container';
+
+
 
 class RestaurantShow extends React.Component {
 
@@ -11,10 +17,19 @@ class RestaurantShow extends React.Component {
   }
 
   render() {
-    const { restaurant } = this.props;
+    const restaurant = this.props.restaurant || {lat: 40.710185, lng: -73.964259};
     if (!restaurant) {
       return <div>Loading...</div>;
     }
+    const reviewList = (reviews) => {
+      if (reviews) {return (reviews.map(review => (
+          <ReviewListItemContainer
+            review={review}
+            key={review.id}
+          />
+        )))
+      }
+    };
     return (
       <div>
         <Link id='home-link' to="/">Home</Link>
@@ -141,6 +156,14 @@ class RestaurantShow extends React.Component {
                     </section>
                     <RestaurantShowReservationContainer restaurant={restaurant} />
                 </div>
+            </div>
+            <div className="restaurant-review">
+              <div className="reviews">
+                <span> Write a review: </span>
+                <ReviewFormContainer />
+                <h3>Reviews</h3>
+                {reviewList(this.props.reviews)}
+              </div>
             </div>
           </main>
         </div>

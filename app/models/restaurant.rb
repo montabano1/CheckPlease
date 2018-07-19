@@ -22,5 +22,10 @@ class Restaurant < ApplicationRecord
   validates :name, :price, :location, presence: true
 
   has_many :avails
+  has_many :reviews
+
+  def average_rating
+    reviews.average(:rating)
+  end
 
 end

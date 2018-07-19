@@ -19,3 +19,18 @@ export const createRestaurant = (restaurant) => {
     data: { restaurant }
   })
 }
+
+export const createReview = review => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/reviews',
+    data: { review }
+  })
+);
+
+export const fetchReviews = () => {
+  return $.ajax ({
+    method: 'GET',
+    url: '/api/reviews'
+  })
+}
