@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
     time: state.session.conf.time,
     currentUser: state.entities.users[state.session.id] || {},
     searchppl: state.session.searchppl,
-    date: state.session.conf.date
+    date: state.session.conf.date,
+    session: state.session
   };
 };
 

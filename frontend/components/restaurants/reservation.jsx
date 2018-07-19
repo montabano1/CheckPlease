@@ -8,23 +8,41 @@ class Reservation extends React.Component {
     super(props);
     this.state = {
       user_id: props.currentUser.id,
-      avail_id: props.availid
+      avail_id: props.availid,
+      errors: '',
+      complete: false
     };
 		this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReservation(this.state);
-    this.props.updateAvail(this.state.avail_id).then(() => {
-      this.props.history.push('/')
-    });
+    if (this.props.session.id) {
+      this.props.createReservation(this.state);
+      this.props.updateAvail(this.state.avail_id).then(() => {
+        this.setState({complete: true})
+      });
+    } else {
+      this.setState({errors: 'YOU MUST BE LOGGED IN TO MAKE A RESERVATION'});
+    }
   }
 
   render() {
     const picName = this.props.restaurant.name.split(' ').join('');
-    const date = this.props.date
+    const date = this.props.date;
     const datestring = new Date(parseInt(date.slice(0,4)),parseInt(date.slice(5,7))-1, parseInt(date.slice(8,10))).toDateString()
+    const confirm = (
+      this.state.complete ?
+        (<span className='successConfirmation'> You're reservation has been confirmed </span>)
+        :
+        (<div>
+          <form onSubmit={this.handleSubmit}>
+            <input className='reservation-submit' type='submit' value='Complete reservation'/>
+          </form>
+          <span className='confirmation-errors'> {this.state.errors} </span>
+        </div>));
+
+
     return (
       <div className='reservation-show'>
         <div className='reservation-header'>
@@ -51,9 +69,9 @@ class Reservation extends React.Component {
             <span className='reservation-name-value'>{this.props.restaurant.name}</span>
           </section>
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <input className='reservation-submit' type='submit' value='Complete reservation'/>
-        </form>
+        <div className='confirm-container'>
+          {confirm}
+        </div>
       </div>
     );
   }

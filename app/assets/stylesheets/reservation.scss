@@ -103,10 +103,23 @@
   width: fit-content;
   background-color: #da3743;
   color: white;
-  margin: 40px 0 200px 100px;
+  margin: 40px 0 20px 100px;
   border-radius: 5px;
   font-size: 15px;
   text-align: center;
   padding: 0 10px;
   font-weight: 800;
+}
+.confirm-container {
+  width: 100%;
+  background-color: #f7f7f7;
+  padding: 40px 0 60px 100px;
+}
+.confirmation-errors {
+  color: red
+}
+.successConfirmation {
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }

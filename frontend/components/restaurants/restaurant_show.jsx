@@ -124,8 +124,8 @@ class RestaurantShow extends React.Component {
                       <span className='specifics-description'>Gramercy/ Flatiron</span>
                     </section>
                     <section className='specifics2'>
-                      <span className='specifics-title'> Cross street </span>
-                      <span className='specifics-description'>Broadway & Park Avenue South</span>
+                      <span className='specifics-title'> Address </span>
+                      <span className='specifics-description'>{restaurant.location}</span>
                     </section>
                     <section className='specifics2'>
                       <span className='specifics-title'> Parking details </span>
