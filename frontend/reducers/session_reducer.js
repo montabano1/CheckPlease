@@ -4,7 +4,9 @@ import { RECEIVE_RESTAURANTS } from '../actions/restaurant_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
-  id: null
+  id: null,
+  conf: {},
+  searchppl: {}
 };
 
 export default function(state = defaultState, action) {

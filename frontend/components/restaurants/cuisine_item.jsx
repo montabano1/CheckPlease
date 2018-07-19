@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 export function CuisineItem (props) {
   return (
-    <section className='cuisine-item'>
+    <section onClick={() => props.searchRestaurants(props.cuisineName)} className='cuisine-item'>
       <section className='cuisine-picture'>
       <img src={window[`cuisine${props.cuisinePic}`]} />
       </section>

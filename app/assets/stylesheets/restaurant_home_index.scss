@@ -139,7 +139,7 @@
   margin: 10px;
 }
 .cuisine-item {
-  width: 200px;
+  min-width: 200px;
   height: 240px;
   display: flex;
   flex-wrap: wrap;
@@ -151,7 +151,9 @@
   margin: 10px;
   position: relative;
   text-align: center;
+  cursor: pointer;
 }
+
 .cuisine-picture {
   height: 100%;
   filter: brightness(.5);
