@@ -82,3 +82,7 @@ confirm button, if it is successful the confirmation message is shown. The
 reservations table is a join table that joins availabilities with users, which
 allows users to have_many reservations. A successful reservation changes the
 avail 'taken' property to be changed from false to true.
+
+## Still to come...
+..* I need to work on filters on the search page, as well as a location search.
+..* Have a loading screen or icon
