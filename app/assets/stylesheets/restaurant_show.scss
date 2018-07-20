@@ -11,6 +11,7 @@
 .single-restaurant-show {
   width: 100%;
   background-color: white;
+  height: fit-content;
 }
 
 .restaurant-picture-container {
@@ -42,10 +43,14 @@
 }
 
 .restaurant-info-container {
-  align-content: center;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .restaurant-info-container-content {
   padding-left: 100px;
+  height: fit-content;
 }
 .restaurant-show-name {
   display: inline-block;
@@ -176,7 +181,7 @@
 .restaurant-review {
   min-width: 200px;
   min-height: 200px;
-  margin-top: 200px;
+  margin-top: 250px;
   border-top: 1px solid black;
   margin-left: 20px;
 }
