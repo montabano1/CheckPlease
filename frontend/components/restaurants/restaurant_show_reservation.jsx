@@ -38,7 +38,8 @@ class RestaurantShowReservation extends React.Component {
     if (this.state.searched === false) {
       choices = [];
     } else {
-      choices = this.props.restaurant.availIds;
+      debugger
+      choices = this.props.restaurant.availIds || [];
       availabilities = choices.map((avail) => {
         if (this.props.avails[avail].taken === 'true') {
           return <div key={this.props.avails[avail].id}/>
