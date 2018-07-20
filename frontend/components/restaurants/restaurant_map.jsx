@@ -13,6 +13,15 @@ class RestaurantMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     new google.maps.Marker({position: mapOptions.center, map: this.map});
   }
+  componentWillReceiveProps(newProps) {
+    const mapOptions = {
+      center: { lat: newProps.lat, lng: newProps.lng },
+      zoom: 16
+    };
+
+    this.map = new google.maps.Map(this.mapNode, mapOptions);
+    new google.maps.Marker({position: mapOptions.center, map: this.map});
+  }
 
 
   render() {

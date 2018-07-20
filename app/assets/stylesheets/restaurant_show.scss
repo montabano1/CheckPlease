@@ -68,7 +68,7 @@
 .restaurant-show-info {
   display: inline-block;
   width: 60%;
-  height: 400px;
+  // height: 400px;
   padding: 20px 0 0 20px;;
   background-color: white;
   font-family: 'ABeeZee', sans-serif;
@@ -181,7 +181,7 @@
 .restaurant-review {
   min-width: 200px;
   min-height: 200px;
-  margin-top: 250px;
+  margin-top: 20px;
   border-top: 1px solid black;
   margin-left: 20px;
 }
@@ -244,4 +244,7 @@
 }
 .checked {
   color: orange;
+}
+.reviews {
+  padding-left: 100px;
 }
