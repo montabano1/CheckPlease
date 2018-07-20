@@ -2,14 +2,13 @@
   height: 800px;
   background-color: white;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .search-filters {
   height: 800px;
   width: 200px;
   background-color: lightgrey;
-  position: absolute;
   left: 20px;
   margin-right: 10px;
 }
@@ -17,8 +16,8 @@
   width: 800px;
   height: 140px;
   padding: 14px;
-  margin-left: 214px;
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   flex-direction: row;
   align-content: flex-start;

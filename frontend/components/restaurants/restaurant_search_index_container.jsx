@@ -19,7 +19,9 @@ class RestaurantSearchIndexContainer extends React.Component {
     return (
       <main className='search-index-container'>
         <section className='search-filters'></section>
-        <ul className='search-index-list'>{restaurants}</ul>
+        <div className='search-indexx'>
+          <ul className='search-index-list'>{restaurants}</ul>
+        </div>
       </main>
     );
   }
