@@ -7,6 +7,8 @@ import { ProtectedRoute } from '../../util/route_util';
 import { ReviewLink } from '../../util/link_util';
 import ReviewListItemContainer from './review_list_item_container';
 import ReviewFormContainer from './review_form_container';
+import { stars } from '../stars'
+import { dollarsigns } from '../dollarsigns'
 
 
 
@@ -17,12 +19,13 @@ class RestaurantShow extends React.Component {
   }
 
   render() {
-    const restaurant = this.props.restaurant || {lat: 40.710185, lng: -73.964259};
+    const restaurant = this.props.restaurant;
     if (!restaurant) {
       return <div>Loading...</div>;
     }
     const reviewList = (reviews) => {
-      if (reviews) {return (reviews.map(review => (
+      if (!reviews.includes(undefined)) {
+        return (reviews.map(review => (
           <ReviewListItemContainer
             review={review}
             key={review.id}
@@ -84,9 +87,12 @@ class RestaurantShow extends React.Component {
             <h1 className='restaurant-show-name'>{restaurant.name}</h1>
             <div className="restaurant-show-info">
               <div className='restaurant-pc'>
-                <strong>Cuisine - {restaurant.cuisine}</strong>
-                &nbsp;&nbsp;
-                <strong>Price - {restaurant.price}</strong>
+                <div className='restaurant-pc-rating'>
+                  <span className='restaurant-show-rating'>{stars[Math.round(restaurant.average_rating)]} </span>
+                  <span> {Math.round(restaurant.average_rating*10)/10}</span>
+                </div>
+                <span className='restaurant-show-cuisine'>Cuisine - {restaurant.cuisine}</span>
+                <span className='restaurant-show-cuisine'>Price - {dollarsigns[restaurant.price]}</span>
               </div>
                 <section className='restaurant-description'>
                   <span className='restaurant-description-value'>
@@ -125,22 +131,20 @@ class RestaurantShow extends React.Component {
                     <span className='specifics-title'> Payment options </span>
                     <span className='specifics-description'>AMEX, Discover, Mastercard, Visa</span>
                   </section>
-                  <section className='specifics'>
-                    <span className='specifics-title'> Dress code </span>
-                    <span className='specifics-description'>Casual Dress</span>
-                  </section>
+
                   <section className='map'>
                     <RestaurantMap lat={restaurant.lat} lng={restaurant.lng}/>
                   </section>
 
                   <section className='specifics-address'>{restaurant.location}</section>
-                    <section className='specifics2'>
-                      <span className='specifics-title'> Neighborhood </span>
-                      <span className='specifics-description'>Gramercy/ Flatiron</span>
-                    </section>
+
                     <section className='specifics2'>
                       <span className='specifics-title'> Address </span>
                       <span className='specifics-description'>{restaurant.location}</span>
+                    </section>
+                    <section className='specifics2'>
+                      <span className='specifics-title'> Dress code </span>
+                      <span className='specifics-description'>Casual Dress</span>
                     </section>
                     <section className='specifics2'>
                       <span className='specifics-title'> Parking details </span>
@@ -159,8 +163,7 @@ class RestaurantShow extends React.Component {
             </div>
             <div className="restaurant-review">
               <div className="reviews">
-                <span> Write a review: </span>
-                <ReviewFormContainer />
+                <ReviewFormContainer restaurantId={restaurant.id}/>
                 <h3>Reviews</h3>
                 {reviewList(this.props.reviews)}
               </div>

@@ -8,6 +8,9 @@ json.set! :restaurants do
       end
 
       json.availIds availIds
+      json.average_rating res.average_rating
+      json.reviewIds res.reviews.pluck(:id)
+      json.amount_booked res.amount_booked
     end
   end
 end

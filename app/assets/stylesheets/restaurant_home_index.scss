@@ -124,8 +124,20 @@
 }
 .home-index-row {
   width: 238px;
-  height: 20px;
+  height: fit-content;
   margin: 4px 0 0 3px;
+}
+.home-index-row-cp {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 238px;
+  height: 20px;
+  margin-top: 4px;
+}
+.home-index-row-cp span{
+  margin-right: 15px;
+  margin-left: 3px;
 }
 
 .cuisine-container-heading {
@@ -165,4 +177,9 @@
   color: white;
   font-family: 'ABeeZee', sans-serif;
   margin:5px;
+}
+.dollarsigns {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
 }

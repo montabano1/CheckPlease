@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { stars } from '../stars';
+import { dollarsigns } from '../dollarsigns'
 
 export function RestaurantHomeIndexItem ({restaurant}) {
   let picName = restaurant.name.split(' ').join('');
+
   return (
     <section className='home-index-item'>
       <section className='home-index-picture'>
@@ -12,13 +15,16 @@ export function RestaurantHomeIndexItem ({restaurant}) {
         {restaurant.name}
       </section>
       <section className='home-index-row'>
-        RATING GOES HERE
+        Average rating - {Math.round(restaurant.average_rating*10)/10}
+        <br/>
+        {stars[Math.round(restaurant.average_rating)]}
+      </section>
+      <section className='home-index-row-cp'>
+        <span>{restaurant.cuisine}</span>
+        <span>Price - {dollarsigns[restaurant.price]}</span>
       </section>
       <section className='home-index-row'>
-        {restaurant.cuisine} - {restaurant.price} - Upper East Side
-      </section>
-      <section className='home-index-row'>
-        BOOKED AMT GOES HERE
+        Booked {restaurant.amount_booked} times today
       </section>
     </section>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { stars } from '../stars'
+import { dollarsigns } from '../dollarsigns'
 
 export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation}) {
 
@@ -61,18 +63,23 @@ export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation})
           </Link>
         </div>
         <div className='search-index-row'>
-          <section className='search-index-rating'>
-            RATING GOES HERE
-          </section>
+          <div className='restaurant-pc-rating'>
+            <span className='search-index-rating'>
+              Average rating - {Math.round(restaurant.average_rating*10)/10} 
+            </span>
+            <span className='search-index-rating'>
+              {stars[Math.round(restaurant.average_rating)]}
+            </span>
+          </div>
           <section className='search-index-price'>
-            {restaurant.price}
+            Price - {dollarsigns[restaurant.price]}
           </section>
         </div>
         <div className='search-index-row'>
           {restaurant.cuisine}
         </div>
         <div className='search-index-row'>
-          BOOKED AMT GOES HERE
+          Booked {restaurant.amount_booked} times today
         </div>
         <div className='search-index-avail-row'>
           {availabilities}

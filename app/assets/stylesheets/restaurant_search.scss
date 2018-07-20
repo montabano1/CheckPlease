@@ -9,6 +9,8 @@
   height: 800px;
   width: 200px;
   background-color: lightgrey;
+  position: absolute;
+  left: 20px;
 }
 .search-index-item-container {
   width: 800px;
@@ -52,6 +54,9 @@
   font-family: 'ABeeZee', sans-serif;
   color: blue;
   font-size: 20px;
+}
+.search-index-rating {
+  margin-right: 5px;
 }
 .search-index-avail-row {
   display: flex;

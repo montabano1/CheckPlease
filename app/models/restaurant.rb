@@ -23,9 +23,15 @@ class Restaurant < ApplicationRecord
 
   has_many :avails
   has_many :reviews
+  has_many :reservations, through: :avails, source: :reservation
+
+
 
   def average_rating
     reviews.average(:rating)
   end
 
+  def amount_booked
+    reservations.count
+  end
 end

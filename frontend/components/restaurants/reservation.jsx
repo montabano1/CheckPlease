@@ -47,6 +47,7 @@ class Reservation extends React.Component {
       <div className='reservation-show'>
         <div className='reservation-header'>
           <span> You're almost done! </span>
+          <span className='dont-refresh'> Please DO NOT refresh this page </span>
         </div>
         <div className='reservation-info' >
           <section className='reservation-picture'>

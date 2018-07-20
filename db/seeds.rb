@@ -13,12 +13,15 @@ Reservation.delete_all
 Review.delete_all
 
 monte = User.create({username: 'monte', email: 'monte@monte.com', password: 'password'})
+carl = User.create({username: 'carl', email: 'carl@carl.com', password: 'password'})
+frank = User.create({username: 'frank', email: 'frank@frank.com', password: 'password'})
+dave = User.create({username: 'dave', email: 'dave@dave.com', password: 'password'})
 
 mcdowells = Restaurant.create({
   name: 'McDowells',
   description: 'golden arcs',
   location: '8507 queens blvd, Elmhurst, NY 11373',
-  cuisine: 'Fast food',
+  cuisine: 'Fast Food',
   price: 1,
   menu_url: 'mcdowells.com/menu',
   lat: 40.737302,
@@ -29,7 +32,7 @@ burger_queen = Restaurant.create({
   name: 'Burger Queen',
   description: 'let them eat burgers',
   location: '8504 queens blvd, Elmhurst, NY 11373',
-  cuisine: 'Fast food',
+  cuisine: 'Fast Food',
   price: 1,
   menu_url: 'BurgerQueen.com/menu',
   lat: 40.736891,
@@ -145,10 +148,22 @@ maclarens = Restaurant.create({
 
 Restaurant.all.each do |res|
   Review.create({
-    body:'I dont think' + res.name + ' is my favorite restaurant, i dont know which is. Maybe Uncle Jerrys Steakhouse - monte',
+    body:'I dont think ' + res.name + ' is my favorite restaurant, i dont know which is. Maybe Uncle Jerrys Steakhouse - by Carl',
     rating: rand(4) + 1,
     restaurant_id: res.id,
-    author_id: monte.id
+    author_id: carl.id
+  })
+  Review.create({
+    body: res.name + ' was ok, id rather go to Aunt Marias Bistro - by Dave',
+    rating: rand(4) + 1,
+    restaurant_id: res.id,
+    author_id: dave.id
+  })
+  Review.create({
+    body:'I kinda like ' + res.name + '! - by he-who-must-not-be-named',
+    rating: rand(5) + 1,
+    restaurant_id: res.id,
+    author_id: frank.id
   })
   i = 0
   day = Time.now.day
@@ -176,10 +191,3 @@ Restaurant.all.each do |res|
     i += 1
   end
 end
-
-review1 = Review.create({
-  body: 'mcdowells reminds me of somewhere else',
-  rating: 5,
-  restaurant_id: mcdowells.id,
-  author_id: monte.id
-  })

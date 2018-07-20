@@ -2,6 +2,8 @@ json.restaurant do
   json.extract! @restaurant, :name, :description, :location, :cuisine, :price, :menu_url, :id, :lat, :lng
   json.availIds @restaurant.avails.pluck(:id)
   json.reviewIds @restaurant.reviews.pluck(:id)
+  json.average_rating @restaurant.average_rating
+  json.amount_booked @restaurant.amount_booked
 end
 
 @restaurant.reviews.includes(:author).each do |review|

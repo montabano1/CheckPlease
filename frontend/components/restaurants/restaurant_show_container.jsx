@@ -5,9 +5,9 @@ import { selectReviewsForRestaurant } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const restaurant = state.entities.restaurants[ownProps.match.params.restaurantId]
-  const reviews = selectReviewsForRestaurant(state.entities, restaurant);
+  const reviews = selectReviewsForRestaurant(state.entities, restaurant) || [];
   return {
-    restaurant: restaurant || {},
+    restaurant: restaurant || {lat: 40.710185, lng: -73.964259},
     reviews
   };
 };
