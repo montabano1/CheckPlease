@@ -13,8 +13,11 @@ https://check-please1.herokuapp.com/#/
 
 # Searching restaurants/ availabilities
 
-The home page is where you can search for restaurants. You can either use
-the search form which is a controlled component or you can click on one of
+The home page is where you can search for restaurants.
+
+![alt text](https://i.imgur.com/r3KuUqP.png "Home search")
+
+You can either use the search form which is a controlled component or you can click on one of
 the cuisine items which are listed in a scrolling box. The biggest challenge
 for me on this was getting the search to work correctly, which was done in the
 back end by adding a search function to my restaurants controller, and a few
@@ -38,7 +41,7 @@ def search
   end
   render :search
 end
-``` 
+```
 
 
 
