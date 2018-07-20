@@ -53,6 +53,8 @@ files and using interpolation with
 ```
 <img src={window[`${picName}`]} />
 ```
+![alt text](https://i.imgur.com/I9vFK1n.png "Home index items")
+
 The return value of the ajax call was restaurants with an availIds array of no
 more than 5 availabilities, and no less than 1. Each restaurant in the search
 page has 5 availability links (they are gray if the availability is taken).
@@ -69,6 +71,8 @@ clicking submit on the form makes an ajax request which populates the form with
 availabilities right under the submit button. I was able to accomplish this by
 having a 'searched' boolean being flipped and the form rendering the avails only
 if searched === true.
+
+![alt text](https://i.imgur.com/SISymbO.png "Pre-search-form") ![alt text](https://i.imgur.com/FxWEUbC.png "Post-search-form")
 
 # Making reservations
 
