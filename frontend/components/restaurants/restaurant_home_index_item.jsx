@@ -20,7 +20,7 @@ export function RestaurantHomeIndexItem ({restaurant}) {
         {stars[Math.round(restaurant.average_rating)]}
       </section>
       <section className='home-index-row-cp'>
-        <span>{restaurant.cuisine}</span>
+        <span>{restaurant.cuisine.split(' ')[0]}</span>
         <span>Price - {dollarsigns[restaurant.price]}</span>
       </section>
       <section className='home-index-row'>

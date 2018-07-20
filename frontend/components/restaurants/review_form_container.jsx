@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import { createReview } from '../../actions/restaurant_actions.js';
 import ReviewForm from './review_form';
 
@@ -8,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     if (ownProps.restaurantId === rev.restaurant_id) {
       return rev.author_id
     }
-  })
+  });
   return {
   currentUser: state.entities.users[state.session.id],
   reviewerIds

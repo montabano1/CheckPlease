@@ -38,6 +38,7 @@ export const fetchRestaurants = () => {
 };
 export const searchRestaurants = (search) => {
   return dispatch => {
+    debugger
     return SearchUtil.searchRestaurants(search).then(
       payload => {
         dispatch(receiveRestaurants(payload));

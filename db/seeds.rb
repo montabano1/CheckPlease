@@ -21,7 +21,7 @@ mcdowells = Restaurant.create({
   name: 'McDowells',
   description: 'golden arcs',
   location: '8507 queens blvd, Elmhurst, NY 11373',
-  cuisine: 'Fast Food',
+  cuisine: 'Fast-Food',
   price: 1,
   menu_url: 'mcdowells.com/menu',
   lat: 40.737302,
@@ -32,7 +32,7 @@ burger_queen = Restaurant.create({
   name: 'Burger Queen',
   description: 'let them eat burgers',
   location: '8504 queens blvd, Elmhurst, NY 11373',
-  cuisine: 'Fast Food',
+  cuisine: 'Fast-Food',
   price: 1,
   menu_url: 'BurgerQueen.com/menu',
   lat: 40.736891,
@@ -62,7 +62,7 @@ sushi_mikes = Restaurant.create({
   name: 'Sushi Mikes',
   description: 'sushini',
   location: '1188 Gravesend Neck Rd, Brooklyn, NY 11229',
-  cuisine: 'Sushi',
+  cuisine: 'Sushi Japanese Asian',
   price: 2,
   menu_url: 'SushiMikes.com/menu',
   lat: 40.595165,
@@ -72,11 +72,31 @@ sushi_daves = Restaurant.create({
   name: 'Sushi Daves',
   description: 'sushini too!',
   location: '1186 Gravesend Neck Rd, Brooklyn, NY 11229',
-  cuisine: 'Sushi',
+  cuisine: 'Sushi Japanese Asian',
   price: 2,
   menu_url: 'SushiDaves.com/menu',
   lat: 40.595165,
   lng: -73.96
+})
+china_pavilion = Restaurant.create({
+  name: 'China Pavilion',
+  description: 'We said we were closing 5 years ago, still havent pulled the trigger!',
+  location: '',
+  cuisine: 'Sushi Japanese Asian',
+  price: 2,
+  menu_url: 'SushiDaves.com/menu',
+  lat: 40.595165,
+  lng: -73.96
+})
+greek = Restaurant.create({
+  name: 'Zorbas',
+  description: "Zorbas is a real-deal Greek family restaurant. This isn't european culinary excellence....good grief...that's not why you go here. You go here for good, old-fashioned down-home goodness---not truffle butter. Be sure to order the moussaka...its authentic and delicious. As for American faire...the steak and eggs are not to missed. Great food, value, and service. Opa!"
+  location: '116 E 3rd St New York, NY 10009',
+  cuisine: 'Greek',
+  price: 2,
+  menu_url: 'Zorbas.com/menu',
+  lat: 40.724225,
+  lng: -73.986585
 })
 
 dorsias = Restaurant.create({
@@ -144,6 +164,26 @@ maclarens = Restaurant.create({
   price: 1,
   lat: 40.764959,
   lng: -73.982874
+})
+jenny = Restaurant.create({
+  name: 'Jenny Gump',
+  description: "You can barbecue it, boil it, broil it, bake it, saute it. Dey's uh, shrimp-kabobs, shrimp creole, shrimp gumbo. Pan fried, deep fried, stir-fried. There's pineapple shrimp, lemon shrimp, coconut shrimp, pepper shrimp, shrimp soup, shrimp stew, shrimp salad, shrimp and potatoes, shrimp burger, shrimp sandwich.",
+  cuisine: 'Seafood',
+  location: '1540 Broadway, New York, NY 10036',
+  menu_url: 'JennyGump.com/menu',
+  price: 2,
+  lat: 40.757633,
+  lng: -73.985266,
+})
+babus = Restaurant.create({
+  name: 'Babus Dream Cafe',
+  description: "You can barbecue it, boil it, broil it, bake it, saute it. Dey's uh, shrimp-kabobs, shrimp creole, shrimp gumbo. Pan fried, deep fried, stir-fried. There's pineapple shrimp, lemon shrimp, coconut shrimp, pepper shrimp, shrimp soup, shrimp stew, shrimp salad, shrimp and potatoes, shrimp burger, shrimp sandwich.",
+  cuisine: 'Mediterranean Indian',
+  location: '1544 Broadway, New York, NY 10036',
+  menu_url: 'Babus.com/menu',
+  price: 2,
+  lat: 40.76,
+  lng: -73.985266,
 })
 
 Restaurant.all.each do |res|

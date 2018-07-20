@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:create, :show, :index]
     resources :avails, only: [:create, :show, :index, :update, :destroy]
     resources :reservations, only: [:create, :destroy]
-    resources :reviews, only: [:create ]
+    resources :reviews, only: [:create]
     get '/restaurant/search', to: 'restaurants#search'
   end
 
