@@ -8,7 +8,6 @@ export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 
 
 export const receiveRestaurants = ({restaurants, avails, searchppl}) => {
-  debugger
   return {
     type: RECEIVE_RESTAURANTS,
     restaurants: restaurants,

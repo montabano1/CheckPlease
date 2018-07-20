@@ -26,7 +26,12 @@ class RestaurantShowReservation extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.searchRestaurants(this.state).then(() => {
+    this.props.searchRestaurants({
+      searchdate: this.state.searchdate,
+      searchtime: this.state.searchtime,
+      searchppl: this.state.searchppl,
+      searchcuisine: this.props.restaurant.name
+    }).then(() => {
       this.setState({searched: true})
     });
   }
