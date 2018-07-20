@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchRestaurant } from '../../actions/restaurant_actions';
 
 class RestaurantMap extends React.Component {
 
@@ -25,8 +26,16 @@ class RestaurantMap extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     lat: ownProps.lat,
-    lng: ownProps.lng
+    lng: ownProps.lng,
+    restaurant: ownProps.restaurant
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchRestaurant: (id) => dispatch(fetchRestaurant(id))
+  };
+};
+
 
 export default connect(mapStateToProps, null)(RestaurantMap);

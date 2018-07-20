@@ -17,6 +17,7 @@ class RestaurantShowReservation extends React.Component {
     };
   }
 
+
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
@@ -38,9 +39,10 @@ class RestaurantShowReservation extends React.Component {
       choices = [];
     } else {
       choices = this.props.restaurant.availIds;
+      debugger
       availabilities = choices.map((avail) => {
         if (this.props.avails[avail].taken === 'true') {
-          return <div className='search-index-empty' key={this.props.avails[avail].id}/>
+          return <div/>
         } else {
         let time;
         if (this.props.avails[avail].datetime[11] === '0') {

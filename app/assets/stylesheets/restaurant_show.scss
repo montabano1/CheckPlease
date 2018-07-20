@@ -42,7 +42,10 @@
 }
 
 .restaurant-info-container {
-  margin: auto;
+  align-content: center;
+}
+.restaurant-info-container-content {
+  padding-left: 100px;
 }
 .restaurant-show-name {
   display: inline-block;
