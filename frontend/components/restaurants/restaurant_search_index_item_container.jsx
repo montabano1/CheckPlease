@@ -6,6 +6,10 @@ import { showConfirmation } from '../../actions/reservation_actions'
 
 class RestaurantSearchIndexItemContainer extends React.Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <RestaurantSearchIndexItem className='search-index-item'

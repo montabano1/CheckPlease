@@ -84,5 +84,5 @@ allows users to have_many reservations. A successful reservation changes the
 avail 'taken' property to be changed from false to true.
 
 ## Still to come...
-..* I need to work on filters on the search page, as well as a location search.
-..* Have a loading screen or icon
+I need to work on filters on the search page, as well as a location search.
+Have a loading screen or icon

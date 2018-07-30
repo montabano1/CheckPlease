@@ -10,7 +10,7 @@ User.delete_all
 Restaurant.delete_all
 Avail.delete_all
 Reservation.delete_all
-Review.delete_all
+
 
 monte = User.create({username: 'monte', email: 'monte@monte.com', password: 'password'})
 carl = User.create({username: 'carl', email: 'carl@carl.com', password: 'password'})
@@ -235,7 +235,7 @@ Restaurant.all.each do |res|
   i = 0
   day = Time.now.day
   month = Time.now.month
-  while i < 7
+  while i < 100
     hour = 11
     while hour < 24
       Avail.create({

@@ -18,21 +18,45 @@ class Api::RestaurantsController < ApplicationController
     end
   end
 
+  def is_date?(ava, date, time)
+    restaurant_params[date][-2..-1].to_i== ava.datetime.day &&
+    restaurant_params[date][-5..-4].to_i == ava.datetime.month &&
+    restaurant_params[time][0..1].to_i <= ava.datetime.hour
+  end
+
   def search
     @avails = []
     @restaurants = []
-    Avail.all.each do |ava|
-      if (restaurant_params[:searchdate][-2..-1].to_i== ava.datetime.day &&
-        restaurant_params[:searchdate][-5..-4].to_i == ava.datetime.month &&
-        restaurant_params[:searchtime][0..1].to_i <= ava.datetime.hour &&
-
-        (Restaurant.find(ava.restaurant_id).cuisine.downcase.include?(restaurant_params[:searchcuisine].downcase) ||
-        Restaurant.find(ava.restaurant_id).name.downcase.include?(restaurant_params[:searchcuisine].downcase)))
-        @searchppl = restaurant_params[:searchppl]
-        @avails << ava
-        @restaurants << Restaurant.find(ava.restaurant_id) unless @restaurants.include?(Restaurant.find(ava.restaurant_id))
+    Restaurant.includes(:avails).all.each do |rest|
+      if (rest.cuisine.downcase.include?(restaurant_params[:searchcuisine].downcase) ||
+      rest.name.downcase.include?(restaurant_params[:searchcuisine].downcase))
+        a = rest.avails
+        count = 0
+        a.each do |ava|
+          if count == 5
+            break
+          end
+          if is_date?(ava, :searchdate, :searchtime)
+            @searchppl = restaurant_params[:searchppl]
+            @avails << ava
+            @restaurants << rest unless @restaurants.include?(rest)
+            count += 1
+          end
+        end
       end
     end
+
+    # Avail.includes(restaurant: [:avails, :reviews]).all.each do |ava|
+    #   restaurant = ava.restaurant
+    #   if (isDate?(ava, :searchdate, :searchtime) &&
+    #
+    #     (restaurant.cuisine.downcase.include?(restaurant_params[:searchcuisine].downcase) ||
+    #     restaurant.name.downcase.include?(restaurant_params[:searchcuisine].downcase)))
+    #     @searchppl = restaurant_params[:searchppl]
+    #     @avails << ava
+    #     @restaurants << restaurant unless @restaurants.include?(restaurant)
+    #   end
+    # end
     render :search
   end
 
