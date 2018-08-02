@@ -32,7 +32,7 @@ class CuisineContainer extends React.Component {
   searchRestaurants(cuz) {
     const today = new Date();
     return this.props.searchRestaurants({
-      searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${today.getDate()}`,
+      searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${(today.getDate() + 101).toString().slice(1)}`,
       searchtime: '19:00',
       searchppl: '2 people',
       searchcuisine: cuz
