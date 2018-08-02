@@ -9,7 +9,7 @@ class RestaurantShowReservation extends React.Component {
     const today = new Date();
 
     this.state = {
-      searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${today.getDate()}`,
+      searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${(today.getDate() + 101).toString().slice(1)}`,
       searchtime: '19:00',
       searchppl: '2 people',
       searchcuisine: props.restaurant.name,
