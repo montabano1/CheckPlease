@@ -7,7 +7,7 @@ class RestaurantHomeSearch extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     const today = new Date();
     this.state = {
-      searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${today.getDate()}`,
+      searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${(today.getDate() + 101).toString().slice(1)}`,
       searchtime: '19:00',
       searchppl: '2 people',
       searchcuisine:''
