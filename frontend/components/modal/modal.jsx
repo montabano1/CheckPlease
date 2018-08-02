@@ -17,6 +17,12 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupContainer className='modal-child-container'/>;
       break;
+    case 'loading':
+      component = <div className='loading'>
+                    <div className='loader'/>
+                    <span className='loading-text'> loading, please wait... </span>
+                  </div>
+      break;
     default:
       return null;
   }

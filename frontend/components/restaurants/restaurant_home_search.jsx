@@ -22,7 +22,11 @@ class RestaurantHomeSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.searchRestaurants(this.state).then(() => this.props.history.push('/restaurant/search'));
+    this.props.openModal('loading');
+    this.props.searchRestaurants(this.state).then(() => {
+      this.props.history.push('/restaurant/search');
+      this.props.closeModal();
+    });
   }
 
   render() {

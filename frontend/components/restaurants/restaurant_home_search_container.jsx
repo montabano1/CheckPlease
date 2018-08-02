@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import RestaurantHomeSearch from './restaurant_home_search';
 import { searchRestaurants } from '../../actions/restaurant_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
   return {
@@ -11,6 +12,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     searchRestaurants: search => dispatch(searchRestaurants(search)),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 
