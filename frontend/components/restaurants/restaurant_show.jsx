@@ -37,7 +37,6 @@ class RestaurantShow extends React.Component {
     };
     return (
       <div>
-        <Link id='home-link' to="/">Home</Link>
         <div className='single-restaurant-show'>
           <picture className='restaurant-picture-container'>
             <picture className='half-image'>

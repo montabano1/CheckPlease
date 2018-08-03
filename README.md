@@ -15,7 +15,7 @@ https://check-please1.herokuapp.com/#/
 
 The home page is where you can search for restaurants.
 
-![alt text](https://i.imgur.com/r3KuUqP.png "Home search")
+![alt text](https://i.imgur.com/pCXFVsz.jpg "Home search")
 
 You can either use the search form which is a controlled component or you can click on one of
 the cuisine items which are listed in a scrolling box. The biggest challenge
@@ -80,7 +80,7 @@ the form on the right. A challenge for me was trying to emulate OpenTable where
 clicking submit on the form makes an ajax request which populates the form with
 availabilities right under the submit button. I was able to accomplish this by
 having a 'searched' boolean being flipped and the form rendering the avails only
-if searched === true.
+if searched is true.
 
 ![alt text](https://i.imgur.com/SISymbO.png "Pre-search-form") ![alt text](https://i.imgur.com/FxWEUbC.png "Post-search-form")
 
@@ -94,4 +94,4 @@ allows users to have_many reservations. A successful reservation changes the
 avail 'taken' property to be changed from false to true.
 
 ## Still to come...
-I need to work on filters on the search page, as well as a location search.
+I need to work on filters on the search page, as well as a location search.aa

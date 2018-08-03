@@ -34,12 +34,16 @@ class ReviewForm extends React.Component {
       restaurant_id: restaurantId,
       body: this.state.body + ' - by ' + this.props.currentUser.username
     });
-    this.props.createReview(review);
+    this.props.createReview(review).then(() => {
+      this.setState({
+        body: '',
+        rating:5,
+        errors: 'Your comment has been successfully submitted'
+      });
+    });
     this.setState({comment_entered: true})
     this.navigateToRestaurantShow();}
-    else {
-      this.setState({errors: 'Rating must be an integer between 1 and 5'})
-    }
+
   }
 
   update(property) {
@@ -60,7 +64,9 @@ class ReviewForm extends React.Component {
             type="number"
             value={parseInt(this.state.rating)}
             onChange={this.update("rating")}
-            className='review-form-rating-value'
+            className='review-form-rating-value' 
+            min= "1"
+            max = "5"
           />
           <br/>
 
