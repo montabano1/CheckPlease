@@ -4,17 +4,11 @@ import { Link } from 'react-router-dom';
 const Greeting = ({ currentUser, logout, openModal, loginDummy }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
-      <Link to='/'>
-        <button onClick={() => loginDummy()} id='modal-signup'>Demo</button>
-      </Link>
+      <button onClick={() => loginDummy()} id='modal-signup'>Demo</button>
       &nbsp;&nbsp;
-      <Link to='/'>
-        <button onClick={() => openModal('signup')} id='modal-signup'>Sign up</button>
-      </Link>
+      <button onClick={() => openModal('signup')} id='modal-signup'>Sign up</button>
       &nbsp;&nbsp;
-      <Link to='/'>
-        <button onClick={() => openModal('login')} id='modal-login'>Sign in</button>
-      </Link>
+      <button onClick={() => openModal('login')} id='modal-login'>Sign in</button>
     </nav>
   );
   const personalGreeting = () => (

@@ -49,7 +49,6 @@ class SessionForm extends React.Component {
     } else {
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
-      this.props.history.push('/');
       this.props.closeModal();
     });}
   }
