@@ -17,16 +17,7 @@ carl = User.create({username: 'carl', email: 'carl@carl.com', password: 'passwor
 frank = User.create({username: 'frank', email: 'frank@frank.com', password: 'password'})
 dave = User.create({username: 'dave', email: 'dave@dave.com', password: 'password'})
 
-peter_boogers = Restaurant.create({
-  name: 'Peter Boogers',
-  description: 'try our steak snoz',
-  location: '21 broad st, Brooklyn, NY 10708',
-  cuisine: 'Steakhouse',
-  price: 3,
-  menu_url: 'PeterBoogers.com/menu',
-  lat: 40.710185,
-  lng: -73.964259
-})
+
 pollos = Restaurant.create({
   name: 'Los Pollos Hermanos',
   description: 'Try our special! Cooked by Heisenberg himself',
@@ -37,16 +28,7 @@ pollos = Restaurant.create({
   lat: 40.741695,
   lng: -73.991956
 })
-orangebees = Restaurant.create({
-  name: 'Orangebees',
-  description: 'Orange ya glad we arent applebees',
-  location: '319 W 42nd St # 1, New York, NY 10036',
-  cuisine: 'American',
-  price: 1,
-  menu_url: 'Orangebees.com/menu',
-  lat: 40.757583,
-  lng: -73.991110
-})
+
 mcdowells = Restaurant.create({
   name: 'McDowells',
   description: "Look... me and the McDonald's people got this little misunderstanding.
@@ -60,6 +42,19 @@ mcdowells = Restaurant.create({
   lat: 40.737302,
   lng: -73.878663
 })
+maclarens = Restaurant.create({
+  name: 'MacLarens Pub',
+  description: "McLaren's is a typical Irish pub with familiar patrons who frequent
+  the booth near the bar and order fried appetizers (from 11 different options, no less)
+  over shots and pints. The burgers are pretty good: one patron was overheard saying,
+  “It's like Christmas in my mouth—meat Christmas",
+  cuisine: 'Contemporary',
+  location: '240 w 55th st new york ny 10019',
+  menu_url: 'Maclarens.com/menu',
+  price: 1,
+  lat: 40.764959,
+  lng: -73.982874
+})
 
 burger_queen = Restaurant.create({
   name: 'Burger Queen',
@@ -70,6 +65,16 @@ burger_queen = Restaurant.create({
   menu_url: 'BurgerQueen.com/menu',
   lat: 40.736891,
   lng: -73.879527
+})
+peter_boogers = Restaurant.create({
+  name: 'Peter Boogers',
+  description: 'try our steak snoz',
+  location: '21 broad st, Brooklyn, NY 10708',
+  cuisine: 'Steakhouse',
+  price: 3,
+  menu_url: 'PeterBoogers.com/menu',
+  lat: 40.710185,
+  lng: -73.964259
 })
 
 sushi_mikes = Restaurant.create({
@@ -116,7 +121,16 @@ greek = Restaurant.create({
   lat: 40.724225,
   lng: -73.986585
 })
-
+orangebees = Restaurant.create({
+  name: 'Orangebees',
+  description: 'Orange ya glad we arent applebees',
+  location: '319 W 42nd St # 1, New York, NY 10036',
+  cuisine: 'American',
+  price: 1,
+  menu_url: 'Orangebees.com/menu',
+  lat: 40.757583,
+  lng: -73.991110
+})
 dorsias = Restaurant.create({
   name: 'Dorsias',
   description: 'The menu includes: Squid ravioli and lemongrass broth; Goat Cheese Profiteroles;
@@ -175,19 +189,7 @@ nuovo = Restaurant.create({
 })
 
 
-maclarens = Restaurant.create({
-  name: 'MacLarens Pub',
-  description: "McLaren's is a typical Irish pub with familiar patrons who frequent
-  the booth near the bar and order fried appetizers (from 11 different options, no less)
-  over shots and pints. The burgers are pretty good: one patron was overheard saying,
-  “It's like Christmas in my mouth—meat Christmas",
-  cuisine: 'Contemporary',
-  location: '240 w 55th st new york ny 10019',
-  menu_url: 'Maclarens.com/menu',
-  price: 1,
-  lat: 40.764959,
-  lng: -73.982874
-})
+
 jenny = Restaurant.create({
   name: 'Jenny Gump',
   description: "You can barbecue it, boil it, broil it, bake it, saute it. Dey's uh,
@@ -235,7 +237,7 @@ Restaurant.all.each do |res|
   i = 0
   day = Time.now.day
   month = Time.now.month
-  while i < 14
+  while i < 20
     hour = 11
     while hour < 24
       Avail.create({

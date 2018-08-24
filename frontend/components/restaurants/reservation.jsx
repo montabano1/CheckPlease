@@ -28,13 +28,14 @@ class Reservation extends React.Component {
   }
 
   render() {
+    
     const picName = this.props.restaurant.name.split(' ').join('');
     const date = this.props.date;
     const datestring = new Date(parseInt(date.slice(0,4)),parseInt(date.slice(5,7))-1, parseInt(date.slice(8,10))).toDateString()
     const confirm = (
       this.state.complete ?
         (<div>
-          <span className='successConfirmation'> You're reservation has been confirmed </span>
+          <span className='successConfirmation'> Your reservation has been confirmed </span>
           <Link to='/' className='backhome'> Back to HOME </Link>
         </div>)
         :
