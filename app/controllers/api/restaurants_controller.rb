@@ -2,7 +2,6 @@ class Api::RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
-
   end
 
   def show
@@ -27,39 +26,23 @@ class Api::RestaurantsController < ApplicationController
   def search
     @avails = []
     @restaurants = []
-    Restaurant.includes(:avails).all.each do |rest|
-      if (rest.cuisine.downcase.include?(restaurant_params[:searchcuisine].downcase) ||
-      rest.name.downcase.include?(restaurant_params[:searchcuisine].downcase))
-        a = rest.avails
-        count = 0
-        a.each do |ava|
-          if count == 5
-            break
-          end
-          if is_date?(ava, :searchdate, :searchtime)
-            @searchppl = restaurant_params[:searchppl]
-            @avails << ava
-            @restaurants << rest unless @restaurants.include?(rest)
-            count += 1
-          end
+    Restaurant.search_true(restaurant_params[:searchcuisine]).each do |rest|
+      a = rest.avail_date(rest.id)
+      count = 0
+      a.each do |ava|
+        if count == 5
+          break
+        end
+        if is_date?(ava, :searchdate, :searchtime)
+          @searchppl = restaurant_params[:searchppl]
+          @avails << ava
+          @restaurants << rest unless @restaurants.include?(rest)
+          count += 1
         end
       end
     end
-
-    # Avail.includes(restaurant: [:avails, :reviews]).all.each do |ava|
-    #   restaurant = ava.restaurant
-    #   if (isDate?(ava, :searchdate, :searchtime) &&
-    #
-    #     (restaurant.cuisine.downcase.include?(restaurant_params[:searchcuisine].downcase) ||
-    #     restaurant.name.downcase.include?(restaurant_params[:searchcuisine].downcase)))
-    #     @searchppl = restaurant_params[:searchppl]
-    #     @avails << ava
-    #     @restaurants << restaurant unless @restaurants.include?(restaurant)
-    #   end
-    # end
     render :search
   end
-
 
   private
 

@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	window.dispatch = store.dispatch;
   window.getState = store.getState;
-	window.createRestaurant = restactions.createRestaurant;
 	window.signup = actions.signup;
+	window.createRestaurant = restactions.createRestaurant;
   window.fetchRestaurants = restactions.fetchRestaurants;
   window.fetchRestaurant = restactions.fetchRestaurant;
   window.fetchAvail = availactions.fetchAvail;

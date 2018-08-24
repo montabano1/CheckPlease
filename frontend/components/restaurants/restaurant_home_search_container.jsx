@@ -6,6 +6,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
   return {
+    restaurants: Object.values(state.entities.restaurants)
   };
 };
 

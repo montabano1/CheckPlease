@@ -30,6 +30,29 @@ class RestaurantHomeSearch extends React.Component {
   }
 
   render() {
+    const names = this.props.restaurants.map((rest) => {
+      return (
+        <option value={rest.name} key={rest.id}/>
+      );
+    })
+    const cuisines = [
+      <option value='American' />,
+      <option value='Italian' />,
+      <option value='Steakhouse' />,
+      <option value='French' />,
+      <option value='Seafood' />,
+      <option value='Mediterranean' />,
+      <option value='Japanese' />,
+      <option value='Contemporary' />,
+      <option value='Indian' />,
+      <option value='Greek' />,
+      <option value='Pizzeria' />,
+      <option value='Sushi' />,
+      <option value='Asian' />,
+      <option value='Mexican' />,
+      <option value='Farm-to-table' />,
+      <option value='Chinese' />
+    ]
     return (
       <form className='home-search-container' onSubmit={this.handleSubmit}>
         <section className='home-search-container-heading'>Find your table for any occasion</section>
@@ -84,8 +107,13 @@ class RestaurantHomeSearch extends React.Component {
           <option value='8 people'> 8 people</option>
           <option value='9 people'> 9 people</option>
         </ select >
+        <datalist id='cuzs'>
+          {names}
+          {cuisines}
+        </datalist>
         <input
           type='text'
+          list='cuzs'
           className='home-search-input'
           placeholder='Location, Restaurant or Cuisine'
           value = {this.state.searchcuisine}

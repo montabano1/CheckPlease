@@ -237,7 +237,7 @@ Restaurant.all.each do |res|
   i = 0
   day = Time.now.day
   month = Time.now.month
-  while i < 20
+  while i < 60
     hour = 11
     while hour < 24
       Avail.create({
