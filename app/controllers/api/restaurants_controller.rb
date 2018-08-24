@@ -30,7 +30,7 @@ class Api::RestaurantsController < ApplicationController
       a = rest.avail_date(rest.id)
       count = 0
       a.each do |ava|
-        if count == 5
+        if count == 5 || count == 6
           break
         end
         if is_date?(ava, :searchdate, :searchtime)
