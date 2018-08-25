@@ -237,23 +237,32 @@ Restaurant.all.each do |res|
   i = 0
   day = Time.now.day
   month = Time.now.month
+  year = Time.now.year
   while i < 60
     hour = 11
     while hour < 24
       Avail.create({
         restaurant_id: res.id,
-        datetime: DateTime.new(2018, month, day, hour, 0),
+        day: day,
+        month: month,
+        year: year,
+        hour: hour,
+        minute: 0,
         taken: 'false'
         })
       Avail.create({
         restaurant_id: res.id,
-        datetime: DateTime.new(2018, month, day, hour, 30),
+        day: day,
+        month: month,
+        year: year,
+        hour: hour,
+        minute: 30,
         taken: 'false'
         })
       hour += 1
     end
     day += 1
-    if day > 30
+    if day > 31
       day = 1
       month += 1
     end

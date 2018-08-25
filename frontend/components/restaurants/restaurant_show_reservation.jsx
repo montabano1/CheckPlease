@@ -45,33 +45,34 @@ class RestaurantShowReservation extends React.Component {
     if (this.state.searched === false) {
       choices = [];
     } else {
-      choices = this.props.restaurant.availIds || [];
+      choices = this.props.restaurant.availIds.sort() || [];
       availabilities = choices.map((avail) => {
-        if (this.props.avails[avail].taken === 'true') {
-          return <div key={this.props.avails[avail].id}/>
+        let ava = this.props.avails[avail]
+        if (ava.taken === 'true') {
+          return <div key={ava.id}/>
         } else {
-        let time;
-        if (this.props.avails[avail].datetime[11] === '0') {
-          time = this.props.avails[avail].datetime.slice(12,16) + ' AM';
-        } else if (parseInt(this.props.avails[avail].datetime.slice(11,13)) > 12) {
-          let temp = ((parseInt(this.props.avails[avail].datetime.slice(11,13))+88).toString());
-          time = temp.slice(1) + this.props.avails[avail].datetime.slice(13,16) + ' PM';
-          if (time[0] === '0') {
-            time = time.slice(1);
-          }
-        } else {
-          time = this.props.avails[avail].datetime.slice(11,16) + ' AM';
+        let hour;
+        let minute;
+        let pm = 'AM'
+        if (ava.hour >12) {
+          hour = ava.hour - 12;
+          pm = 'PM'
         }
-
+        if (ava.minute === 0) {
+          minute = ':00 '
+        } else {
+          minute = ':30 '
+        }
+        const time = String(hour) + minute + pm;
         const payload = {
           restaurant: this.props.restaurant,
-          availid: this.props.avails[avail].id,
+          availid: ava.id,
           time: time,
-          date: this.props.avails[avail].datetime.slice(0,10)
+          date: String(ava.year) + '-' + String(ava.month) + '-' + String(ava.day)
         }
 
         return (
-          <div className='search-index-avail-show' key={this.props.avails[avail].id}>
+          <div className='search-index-avail-show' key={ava.id}>
             <Link to='/reservation'>
               <button onClick={() => this.props.showConfirmation(payload)}>
               <span className='search-index-time'> {time} </span>

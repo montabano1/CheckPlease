@@ -17,28 +17,23 @@ class Api::RestaurantsController < ApplicationController
     end
   end
 
-  def is_date?(ava, date, time)
-    restaurant_params[date][-2..-1].to_i== ava.datetime.day &&
-    restaurant_params[date][-5..-4].to_i == ava.datetime.month &&
-    restaurant_params[time][0..1].to_i <= ava.datetime.hour
-  end
+
 
   def search
     @avails = []
     @restaurants = []
     Restaurant.search_true(restaurant_params[:searchcuisine]).each do |rest|
-      a = rest.avail_date(rest.id)
+      a = Restaurant.avail_date(rest.id, restaurant_params[:searchdate], restaurant_params[:searchtime])
+      a = a.sort_by{|el| el.hour}
       count = 0
       a.each do |ava|
-        if count == 5 || count == 6
+        if count == 5
           break
         end
-        if is_date?(ava, :searchdate, :searchtime)
-          @searchppl = restaurant_params[:searchppl]
-          @avails << ava
-          @restaurants << rest unless @restaurants.include?(rest)
-          count += 1
-        end
+        @searchppl = restaurant_params[:searchppl]
+        @avails << ava
+        @restaurants << rest unless @restaurants.include?(rest)
+        count += 1
       end
     end
     render :search

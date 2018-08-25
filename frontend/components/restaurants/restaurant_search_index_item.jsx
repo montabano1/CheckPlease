@@ -12,24 +12,26 @@ export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation})
     if (avail.taken === 'true') {
       return <div className='search-index-empty' key={avail.id}/>
     } else {
-    let time;
-    if (avail.datetime[11] === '0') {
-      time = avail.datetime.slice(12,16) + ' AM';
-    } else if (parseInt(avail.datetime.slice(11,13)) > 12) {
-      let temp = ((parseInt(avail.datetime.slice(11,13))+88).toString());
-      time = temp.slice(1) + avail.datetime.slice(13,16) + ' PM';
-      if (time[0] === '0') {
-        time = time.slice(1);
-      }
-    } else {
-      time = avail.datetime.slice(11,16) + ' AM';
+    let hour = avail.hour;
+    let pm = 'AM';
+    if (avail.hour > 12) {
+      hour -= 12;
+      pm = 'PM';
     }
+    let minute;
+    if (avail.minute === 0) {
+      minute = ':00 '
+    } else {
+      minute = ':30 '
+    }
+    const time = String(hour) + minute + pm
+    const date = String(avail.year) + '-' + String(avail.month) + '-' + String(avail.day)
 
     const payload = {
       restaurant: restaurant,
       availid: avail.id,
       time: time,
-      date: avail.datetime.slice(0,10)
+      date: date
     }
 
     return (
@@ -65,7 +67,7 @@ export function RestaurantSearchIndexItem ({restaurant, avas, showConfirmation})
         <div className='search-index-row'>
           <div className='restaurant-pc-rating'>
             <span className='search-index-rating'>
-              Average rating - {Math.round(restaurant.average_rating*10)/10} 
+              Average rating - {Math.round(restaurant.average_rating*10)/10}
             </span>
             <span className='search-index-rating'>
               {stars[Math.round(restaurant.average_rating)]}

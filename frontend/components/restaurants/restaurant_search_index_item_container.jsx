@@ -29,8 +29,8 @@ const mapStateToProps = (state, ownProps) => {
     }
   }
   avas = avas.sort(function(b,c) {
-    const nameb = parseInt(b.datetime.slice(11,13)) + .001*parseInt(b.datetime.slice(14,16));
-    const namec = parseInt(c.datetime.slice(11,13)) + .001*parseInt(c.datetime.slice(14,16));
+    const nameb = parseInt(b.hour) + .001*parseInt(b.minute);
+    const namec = parseInt(c.hour) + .001*parseInt(c.minute);
     if (nameb < namec) {return -1;} if (nameb > namec) {return 1;} return 0;});
   avas = avas.slice(0,5)
   return {

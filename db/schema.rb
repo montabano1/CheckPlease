@@ -10,21 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_195434) do
+ActiveRecord::Schema.define(version: 2018_08_25_033203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "availabilities", force: :cascade do |t|
-    t.integer "restaurant_id", null: false
-    t.boolean "taken", null: false
-    t.datetime "datetime", null: false
-  end
-
   create_table "avails", force: :cascade do |t|
     t.integer "restaurant_id", null: false
-    t.datetime "datetime", null: false
     t.string "taken", null: false
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "day", null: false
+    t.integer "hour", null: false
+    t.integer "minute", null: false
     t.index ["restaurant_id"], name: "index_avails_on_restaurant_id"
   end
 

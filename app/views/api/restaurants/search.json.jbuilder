@@ -18,7 +18,7 @@ end
 json.set! :avails do
   @avails.each do |ava|
     json.set! ava.id do
-      json.extract! ava, :id, :restaurant_id, :datetime, :taken
+      json.extract! ava, :id, :restaurant_id, :day, :month, :year, :hour, :minute, :taken
     end
   end
 end

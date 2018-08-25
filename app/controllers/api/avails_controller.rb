@@ -43,7 +43,7 @@ class Api::AvailsController < ApplicationController
   private
 
   def avail_params
-    params.require(:avail).permit(:restaurant_id, :datetime, :taken)
+    params.require(:avail).permit(:restaurant_id, :day, :month, :year, :hour, :minute, :taken)
   end
 
 end

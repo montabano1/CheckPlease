@@ -35,11 +35,10 @@ class Restaurant < ApplicationRecord
     end
   end
 
-  def avail_date(id)
-    Avail.where(restaurant_id: id)
+  def self.avail_date(id, day, time)
+    Avail.where(restaurant_id: id).where(year: day[0..3].to_i).where(month: day[5..6])
+    .where(day: day[8..9]).where('hour > ?', time.split(' ')[0].to_i - 1)
   end
-
-
 
   def average_rating
     reviews.average(:rating)

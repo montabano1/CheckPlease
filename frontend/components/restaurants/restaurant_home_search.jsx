@@ -8,7 +8,7 @@ class RestaurantHomeSearch extends React.Component {
     const today = new Date();
     this.state = {
       searchdate: `${today.getFullYear()}-${(today.getMonth() + 101).toString().slice(1)}-${(today.getDate() + 101).toString().slice(1)}`,
-      searchtime: '19:00',
+      searchtime: '19 00',
       searchppl: '2 people',
       searchcuisine:''
     };
@@ -36,22 +36,22 @@ class RestaurantHomeSearch extends React.Component {
       );
     })
     const cuisines = [
-      <option value='American' />,
-      <option value='Italian' />,
-      <option value='Steakhouse' />,
-      <option value='French' />,
-      <option value='Seafood' />,
-      <option value='Mediterranean' />,
-      <option value='Japanese' />,
-      <option value='Contemporary' />,
-      <option value='Indian' />,
-      <option value='Greek' />,
-      <option value='Pizzeria' />,
-      <option value='Sushi' />,
-      <option value='Asian' />,
-      <option value='Mexican' />,
-      <option value='Farm-to-table' />,
-      <option value='Chinese' />
+      <option value='American' key='American' />,
+      <option value='Italian' key='Italian' />,
+      <option value='Steakhouse' key='Steakhouse' />,
+      <option value='French' key='French' />,
+      <option value='Seafood' key='Seafood' />,
+      <option value='Mediterranean' key='Mediterranean' />,
+      <option value='Japanese' key='Japanese' />,
+      <option value='Contemporary' key='Contemporary' />,
+      <option value='Indian' key='Indian' />,
+      <option value='Greek' key='Greek' />,
+      <option value='Pizzeria' key='Pizzeria' />,
+      <option value='Sushi' key='Sushi' />,
+      <option value='Asian' key='Asian' />,
+      <option value='Mexican' key='Mexican' />,
+      <option value='Farm-to-table' key='Farm-to-table' />,
+      <option value='Chinese' key='Chinese' />
     ]
     return (
       <form className='home-search-container' onSubmit={this.handleSubmit}>
@@ -66,33 +66,33 @@ class RestaurantHomeSearch extends React.Component {
         <select className='home-search-dropdown-center'
           value={this.state.searchtime}
           onChange={this.update('searchtime')}>
-          <option className= 'time-option' value="10:30">10:30 AM</option>
-          <option className= 'time-option' value="11:00">11:00 AM</option>
-          <option className= 'time-option' value="11:30">11:30 AM</option>
-          <option className= 'time-option' value="12:00">12:00 PM</option>
-          <option className= 'time-option' value="12:30">12:30 PM</option>
-          <option className= 'time-option' value="13:00">1:00 PM</option>
-          <option className= 'time-option' value="13:30">1:30 PM</option>
-          <option className= 'time-option' value="14:00">2:00 PM</option>
-          <option className= 'time-option' value="14:30">2:30 PM</option>
-          <option className= 'time-option' value="15:00">3:00 PM</option>
-          <option className= 'time-option' value="15:30">3:30 PM</option>
-          <option className= 'time-option' value="16:00">4:00 PM</option>
-          <option className= 'time-option' value="16:30">4:30 PM</option>
-          <option className= 'time-option' value="17:00">5:00 PM</option>
-          <option className= 'time-option' value="17:30">5:30 PM</option>
-          <option className= 'time-option' value="18:00">6:00 PM</option>
-          <option className= 'time-option' value="18:30">6:30 PM</option>
-          <option className= 'time-option' value="19:00">7:00 PM</option>
-          <option className= 'time-option' value="19:30">7:30 PM</option>
-          <option className= 'time-option' value="20:00">8:00 PM</option>
-          <option className= 'time-option' value="20:30">8:30 PM</option>
-          <option className= 'time-option' value="21:00">9:00 PM</option>
-          <option className= 'time-option' value="21:30">9:30 PM</option>
-          <option className= 'time-option' value="22:00">10:00 PM</option>
-          <option className= 'time-option' value="22:00">10:30 PM</option>
-          <option className= 'time-option' value="23:00">11:00 PM</option>
-          <option className= 'time-option' value="23:30">11:30 PM</option>
+          <option className= 'time-option' value="10 30">10:30 AM</option>
+          <option className= 'time-option' value="11 00">11:00 AM</option>
+          <option className= 'time-option' value="11 30">11:30 AM</option>
+          <option className= 'time-option' value="12 00">12:00 PM</option>
+          <option className= 'time-option' value="12 30">12:30 PM</option>
+          <option className= 'time-option' value="13 00">1:00 PM</option>
+          <option className= 'time-option' value="13 30">1:30 PM</option>
+          <option className= 'time-option' value="14 00">2:00 PM</option>
+          <option className= 'time-option' value="14 30">2:30 PM</option>
+          <option className= 'time-option' value="15 00">3:00 PM</option>
+          <option className= 'time-option' value="15 30">3:30 PM</option>
+          <option className= 'time-option' value="16 00">4:00 PM</option>
+          <option className= 'time-option' value="16 30">4:30 PM</option>
+          <option className= 'time-option' value="17 00">5:00 PM</option>
+          <option className= 'time-option' value="17 30">5:30 PM</option>
+          <option className= 'time-option' value="18 00">6:00 PM</option>
+          <option className= 'time-option' value="18 30">6:30 PM</option>
+          <option className= 'time-option' value="19 00">7:00 PM</option>
+          <option className= 'time-option' value="19 30">7:30 PM</option>
+          <option className= 'time-option' value="20 00">8:00 PM</option>
+          <option className= 'time-option' value="20 30">8:30 PM</option>
+          <option className= 'time-option' value="21 00">9:00 PM</option>
+          <option className= 'time-option' value="21 30">9:30 PM</option>
+          <option className= 'time-option' value="22 00">10:00 PM</option>
+          <option className= 'time-option' value="22 00">10:30 PM</option>
+          <option className= 'time-option' value="23 00">11:00 PM</option>
+          <option className= 'time-option' value="23 30">11:30 PM</option>
         </ select >
         <select className='home-search-dropdown-right'
           value={this.state.searchppl}
